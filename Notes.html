@@ -7,11 +7,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <style>
+            .sectionHeader {
+                text-decoration: underline;
+                padding-top: 20px;
+            }
+            .tabSpace {
+                padding-left: 10px;
+            }
+        </style>
     </head>
     <body>
         <h1>Notes on SQL</h1>
 
-        <h2>Creating, Deleting, Using</h2>
+        <h2 class="sectionHeader">Creating, Deleting, Using</h2>
         <p><strong>MYSQL-CTL CLI;</strong> - Start the CLI</p>
         <p><strong>SHOW DATABASES;</strong> - Lists available databases</p>
 
@@ -21,10 +30,8 @@
         <p><strong>USE &#60name&#62</strong> - Select database to use</p>
         <p><strong>SELECT &#60name&#62</strong> - Select database to use</p>
 
-        <br>
-        <h2>Tables</h2>
-        <p><strong>Create Table</strong></p>
-        <p>CREATE TABLE &#60name&#62 (</p>
+        <h2 class="sectionHeader">Tables</h2>
+        <p><strong>CREATE TABLE &#60tablename&#62</strong></p>
         <p>&#60column_name&#62 &#60data_type&#62,</p>
         <p>&#60column_name&#62 &#60data_type&#62</p>
         <p>);</p>
@@ -41,8 +48,7 @@
         <p><strong>DESC &#60tablename&#62</strong> - Shorthand to show the table columns</p>
         <p><strong>DROP TABLE &#60tableName&#62</strong> - Deletes a table</p>
         
-        <br>
-        <h2>Inserting / Adding Data to Table</h2>
+        <h2 class="sectionHeader">Inserting / Adding Data to Table</h2>
         <p><strong>INSERT INTO &#60tablename&#62 (variablename1, variablename2) VALUES (value1, value2)</strong> - Insert two values</p>
         <p>Order of variables doesn't matter. Just have to match variable name to value</p>
         <p>To insert multiple values, separate the groups with a comma. Ex:</p>
@@ -51,8 +57,7 @@
 
         <p><strong>SELECT * FROM &#60tablename&#62;</strong> - Shows the values in the table</p>
 
-        <br>
-        <h2>SQL Data Types</h2>
+        <h2 class="sectionHeader">SQL Data Types</h2>
         <h4>Numeric Types</h4>
         <ul>
             <li>INT</li>
