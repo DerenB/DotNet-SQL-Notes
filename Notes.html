@@ -21,8 +21,7 @@
         <p><strong>USE &#60name&#62</strong> - Select database to use</p>
         <p><strong>SELECT &#60name&#62</strong> - Select database to use</p>
 
-        <p><strong></strong> - </p>
-
+        <br>
         <h2>Tables</h2>
         <p><strong>Create Table</strong></p>
         <p>CREATE TABLE &#60name&#62 (</p>
@@ -41,11 +40,18 @@
         <p><strong>SHOW COLUMNS FROM &#60tablename&#62</strong> - Shows the table columns</p>
         <p><strong>DESC &#60tablename&#62</strong> - Shorthand to show the table columns</p>
         <p><strong>DROP TABLE &#60tableName&#62</strong> - Deletes a table</p>
-
+        
+        <br>
         <h2>Inserting / Adding Data to Table</h2>
         <p><strong>INSERT INTO &#60tablename&#62 (variablename1, variablename2) VALUES (value1, value2)</strong> - Insert two values</p>
         <p>Order of variables doesn't matter. Just have to match variable name to value</p>
+        <p>To insert multiple values, separate the groups with a comma. Ex:</p>
+        <p><strong>INSERT INTO cats(name,age) VALUES ('Peanut', 2), ('Butter', 4);</strong></p>
 
+
+        <p><strong>SELECT * FROM &#60tablename&#62;</strong> - Shows the values in the table</p>
+
+        <br>
         <h2>SQL Data Types</h2>
         <h4>Numeric Types</h4>
         <ul>
