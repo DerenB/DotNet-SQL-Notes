@@ -49,15 +49,16 @@
         <p><strong>SELECT * FROM &#60tablename&#62;</strong> - Shows the values in the table</p>
 
         <br>
-        <p><strong>&#60varName&#62 &#60varType&#62 DEFAULT &#60varVALUE&#62;</strong> - Add a default value to variable </p>
+        <p><strong>&#60varName&#62 &#60varType&#62 DEFAULT &#60varVALUE&#62 ;</strong> - Add a default value to variable </p>
         <p>Example for default:</p>
         <p><strong>name VARCHAR(20) DEFAULT 'no name provided'</strong> - String with a default value</p>
-        <p><strong>&#60varName&#62 &#60varType&#62 NOT NULL DEFAULT &#60varVALUE&#62;</strong> - Add a default value to variable and prevents NULL being entered</p>
+        <p><strong>&#60varName&#62 &#60varType&#62 NOT NULL DEFAULT &#60varVALUE&#62 ;</strong> - Add a default value to variable and prevents NULL being entered</p>
         <p><strong>name VARCHAR(20) NOT NULL DEFAULT 'unnamed'</strong> - String with a default value</p>
         
 
         <h2 class="sectionHeader">Keys</h2>
-        <p>Primary Key: Unique key for each database item</p>
+        <p>Primary Key: A Unique key for each database item, determined by the specified variable.</p>
+        <p><strong>PRIMARY KEY (&#60varName&#62)</strong></p>
 
         
         <h2 class="sectionHeader">SQL Data Types</h2>
