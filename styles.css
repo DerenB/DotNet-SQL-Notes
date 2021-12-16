@@ -3,9 +3,14 @@
     color: #00ff00;
 }
 
+.pageTitle {
+    color: #ffff00;
+}
+
 .sectionHeader {
     text-decoration: underline;
     padding-top: 20px;
+    color: #00ffff;
 }
 .tabSpace {
     padding-left: 20px;
