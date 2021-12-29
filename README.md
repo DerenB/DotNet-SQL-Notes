@@ -1,2 +1,2 @@
-# SQL-Notes
-Random notes and practice on SQL
+# DotNet-SQL-Notes
+Random notes on dotnet and SQL.
