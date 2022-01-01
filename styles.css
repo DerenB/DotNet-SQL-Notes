@@ -1,17 +1,41 @@
-* {
+body {
     background-color: #15202b;
-    color: #00ff00;
+    margin-top:0;
+    padding-top:0;
 }
 
 .pageTitle {
-    color: #ffff00;
+    color: #8899a6;
+    text-decoration: underline;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    background-color: #15202b;
+}
+
+#firstSection {
+    margin-top: 75px;
 }
 
 .sectionHeader {
-    text-decoration: underline;
-    padding-top: 20px;
-    color: #00ffff;
+    color: #22303c;
+    border-bottom: solid white 1px;
+    padding-bottom: 20px;
 }
+
+.sectionNote {
+    color: #192734;
+    border: solid white 1px;
+    background-color: #8899a6;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    font-size: 1.4em;
+}
+
 .tabSpace {
     padding-left: 20px;
 }
