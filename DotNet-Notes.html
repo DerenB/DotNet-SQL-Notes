@@ -20,11 +20,14 @@
             <p><strong>- Pages</strong> - contains all the pages required for the project. Has two files:</p>
             <p class="oneSpace"><strong>- .cshtml</strong> - contains razor syntax, which is a combination of HTML markup and C#</p>
             <p class="oneSpace"><strong>- .cshtml.cs</strong> - contains the logic and behaivor for each page</p>
+
             <p class="oneSpace"><strong>- Shared Folder:</strong></p>
+            <p class="twoSpace"><strong>- _Layout.cshtml</strong> - The actual html page. <a href="#layoutDetails">Details</a></p>
+
             <p><strong>- Properties</strong> - settings and definitions that are going to be used when running the app</p>
             <p><strong>- wwwroot</strong> - contains all of the static files. Store HTML, CSS, JS, files here.</p>
             <p class="oneSpace">- Cannot store C# or Razor files here.</p>
-            <p class="oneSpace">- Razor uses bootstrap, stored in the /lib directory.</p>
+            <p class="oneSpace"></p>
             <p><strong>- appsettings.json</strong> - loads appsettings.json in production, loads appsettings.developer.json in development</p>
             <p><strong>- program.cs</strong> - contains the entry point for the program. The Main Method is the first method which gets invoked.</p>
             <p><strong>- startup.cs</strong> - contains the startup class.</p>
@@ -42,6 +45,11 @@
             <h2 class="sectionHeader">Building a Project</h2>
             <p>- IIS Express - Internet Information Server. </p>
             <p>- RazorPagesUI - Uses Kestrel, a command line web server.</p>
+        </div>
+
+        <div class="sectionNote" id="layoutDetails">
+            <h2 class="sectionHeader">Page Layout Details</h2>
+            <p>- Razor uses bootstrap, stored in the /lib directory.</p>
         </div>
 
         <script src="" async defer></script>
