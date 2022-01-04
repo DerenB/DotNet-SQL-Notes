@@ -19,24 +19,16 @@
             <p><strong>- Dependencies</strong> - Contains the framework and packages that are required for the application to run.</p>
             <p><strong>- Pages</strong> - Contains all the pages required for the project. Has two files:</p>
             <p class="oneSpace"><strong>- Shared Folder:</strong></p>
-            <p class="twoSpace"><strong>- _Layout.cshtml</strong> - The actual html page. <a href="#layoutDetails">Details</a></p>
+            <p class="twoSpace"><strong>-- _Layout.cshtml</strong> - The actual html page. <a href="#layoutDetails">Details</a></p>
             <p class="oneSpace"><strong>- _ViewImports.cshtml</strong>- Pages to help to get started in Razor pages.</p>
             <p class="oneSpace"><strong>- _ViewStart.cshtml</strong>- Pages to help to get started in Razor pages.</p>
             <p class="oneSpace"><strong>- Index.cshtml</strong> - contains razor syntax, which is a combination of HTML markup and C#</p>
-            <p class="twoSpace"><strong>- Index.cshtml.cs</strong> - contains the logic and behaivor for each page</p>
+            <p class="twoSpace"><strong>-- Index.cshtml.cs</strong> - contains the logic and behaivor for each page</p>
             
-            -three pages are template pages: Error, Index, Privacy
-            -INDEX:
-                - starting page, the main page
-                -index.cshtml is the dotnet starting point
-                    -industry standard to call it Index
-                @page - indicates it as a Razor page
-                    - indicates the Razor syntax, C# code
-                @model IndexModel - the data that is associated with this page
-                    -will typically only have one model
-                    - part of the pageModel
-                
-            
+            <p class="oneSpace"><strong>- Three pages are template pages:</strong></p>
+            <p class="twoSpace"><strong>-- Error.cshtml</strong>- </p>
+            <p class="twoSpace"><strong>-- Index.cshtml</strong> - Website starting page. <a href="#indexDetails">Details</a></p>
+            <p class="twoSpace"><strong>-- Privacy.cshtml</strong></p>
 
             <p><strong>- Properties</strong> - Settings and definitions that are going to be used when running the app</p>
 
@@ -67,6 +59,18 @@
             <p>- Found in Pages  >  Shared  >  _Layout.cshtml</p>
             <p>- The line "@RenderBody()" injects the Razor page, the Index.cshtml page, into the HTML.</p>
             <p>- Can make changes to the overall HTML page here in _Layout.cshtml</p>
+        </div>
+
+        <div class="sectionNote" id="indexDetails">
+            <h2 class="sectionHeader">Index.cshtml Details</h2>
+            <p>- index.cshtml is the dotnet starting point</p>
+            <p class="oneSpace">- Industry standard is to call it Index</p>
+            <p>- "@page" indicates it as a Razor page</p>
+            <p class="oneSpace">Indicates the Razor syntax, C# code</p>
+            <p>- "@model IndexModel" - the data that is associated with this page</p>
+            <p class="oneSpace">- Will typically only have one model</p>
+            <p class="oneSpace">- Part of the PageModel</p>
+
         </div>
 
         <div class="sectionNote" id="rootDetails">
