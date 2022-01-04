@@ -13,6 +13,7 @@
         <div class="pageTitle">
             <h1 >Notes on DotNet</h1>
         </div>
+        <a name="top"></a>
 
         <div class="sectionNote first">
             <h2 class="sectionHeader">Folder Items</h2>
@@ -46,12 +47,14 @@
             <p>- Web Application - Uses Razor pages, can use MVC pages. Uses Razor pages as a default</p> 
             <p>- Web Application (Model-View-Controller) - Uses MVC, can use Razor pages</p>
             <p>- Always check "Configure for HTTPS".</p> 
+            <a href="#top">Top</a>
         </div>
         
         <div class="sectionNote">
             <h2 class="sectionHeader">Building a Project</h2>
             <p>- IIS Express - Internet Information Server. </p>
             <p>- RazorPagesUI - Uses Kestrel, a command line web server.</p>
+            <a href="#top">Top</a>
         </div>
 
         <div class="sectionNote" id="layoutDetails">
@@ -59,6 +62,7 @@
             <p>- Found in Pages  >  Shared  >  _Layout.cshtml</p>
             <p>- The line "@RenderBody()" injects the Razor page, the Index.cshtml page, into the HTML.</p>
             <p>- Can make changes to the overall HTML page here in _Layout.cshtml</p>
+            <a href="#top">Top</a>
         </div>
 
         <div class="sectionNote" id="indexDetails">
@@ -68,8 +72,17 @@
             <p>- "@page" indicates it as a Razor page</p>
             <p class="oneSpace">Indicates the Razor syntax, C# code</p>
             <p>- "@model IndexModel" - the data that is associated with this page</p>
+            <p class="oneSpace">- PageModel is at Index.cshtml.cs</p>
             <p class="oneSpace">- Will typically only have one model</p>
             <p class="oneSpace">- Part of the PageModel</p>
+            <p>- ViewData["Title"] = "Home page" - changes the Title property</p>
+            <p><strong>- Index.cshtml.cs</strong> Details:</p>
+            <p class="oneSpace">- C# class, has a constructor that takes in a logger</p>
+            <p class="oneSpace">- OnGet() Method - is what renders the Index page, is what runs when the Index page is created</p>
+            <p class="oneSpace">- OnPost() Method - runs whenever data is posted to the page</p>
+            <p class="twoSpace">-- OnPost is not always included, only when information needs to be read in</p>
+            <p class="oneSpace">- </p>
+            <a href="#top">Top</a>
 
         </div>
 
@@ -78,6 +91,7 @@
             <p>- Bootstrap Location: wwwroot > lib > bootstrap > dist > js > bootstrap.js</p>
             <p>- Uses Bootstrap version 4.xx</p>
             <p>- Should stay on version of Bootstrap initially provided.</p>
+            <a href="#top">Top</a>
         </div>
 
         <div class="sectionNote">
@@ -92,7 +106,9 @@
             <p class="oneSpace">- <a target="_blank" href="">Text</a> : </p>
             <p class="oneSpace">- <a target="_blank" href="">Text</a> : </p>
             <p class="oneSpace">- <a target="_blank" href="">Text</a> : </p>
+            <a href="#top">Top</a>
         </div>
+
         <div id="footer">
             <p>2021 - 2022 Dotnet Notes</p>
         </div>
