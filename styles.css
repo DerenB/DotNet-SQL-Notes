@@ -57,5 +57,11 @@ body {
 
 #footer {
     text-align: center;
-    color: white;
+    color: #808080;
+}
+
+a, a:visited, a:hover, a:active {
+    color: black;
+    font-weight: bold;
+    font-size: 0.9em;
 }
