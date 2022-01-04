@@ -54,3 +54,8 @@ body {
 .threeSpace {
     padding-left: 60px;
 }
+
+#footer {
+    text-align: center;
+    color: white;
+}
