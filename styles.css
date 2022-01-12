@@ -55,6 +55,10 @@ body {
     padding-left: 60px;
 }
 
+.fourSpace {
+    padding-left: 80px;
+}
+
 #footer {
     text-align: center;
     color: #808080;
