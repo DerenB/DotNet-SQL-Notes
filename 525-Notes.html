@@ -118,6 +118,53 @@
             <img class="twoSpace" src="525-0112-Image2.jpg" alt="0112-Image2"/>
 
 
+        <p>- I/O Structure </p>
+        <p class="oneSpace">- After I/O starts, control returns to user program only upon I/O completion </p>
+        <p class="twoSpace">- Wait instruction idles the CPU until the next interrupt </p>
+        <p class="twoSpace">- Wait loop (contention for memory access) </p>
+            <p class="twoSpace">- At most one I/O request is outstanding at a time, no simultaneous I/O processing </p>
+
+        <p>- I/O Structure - Synch vs. Asynch </p>
+        <p class="oneSpace">- Synchronous: after I/O starts, control returns to user program only upon I/O completion </p>
+            <p class="twoSpace">- Wait instructions idles the CPU until the next interupt </p>
+            <p class="twoSpace">- Wait loop (contention for memory access) </p>
+            <p class="twoSpace">- At most one I/O request is outstanding at a time, no simultatenous I/O processing </p>
+        <p class="oneSpace">- Asynchronous: after I/O starts, control returns to user program without waiting for I/O completion </p>
+            <p class="twoSpace"><strong>- System Call </strong> - request to the OS to allow user to wait for I/O completion </p>
+            <p class="twoSpace"><strong>- Device status table </strong> - contains entry for each I/o device indicating its type, address, and state </p>
+            <p class="twoSpace">- OS indexes into I/O device table to determine device status and to modify table entry to include interrupt </p>
+        
+        <p>- Drivers </p>
+        <p class="oneSpace"><strong>- Device Driver </strong> - for each device cotnroller to manage I/O </p>
+            <p class="twoSpace">- Provides uniform interface between controller and kernal </p>
+
+        <p>- Direct Memory Access Structure </p>
+        <p class="oneSpace">- Used for high-speed I/O devices able to transmit information at close to memory speeds </p>
+        <p class="oneSpace">- Device controller transfers blocks of data from buffer storage directly to main memory without CPU intervention </p>
+        <p class="oneSpace">- Only one interrupt is generated per block, rather than the one interrupt per byte </p>
+
+        <p>- Storage Structure </p>
+        <p class="oneSpace">- Main memory – only large storage media that the CPU can access directly </p>
+        <p class="twoSpace">- Random Access </p>
+        <p class="twoSpace">- Typically Volatile </p>
+        <p class="oneSpace">- Secondary storage – extension of main memory that provides large nonvolatile storage capacity </p>
+        <p class="oneSpace">- Magnetic disks – rigid metal or glass platters covered with magnetic recording material  </p>
+        <p class="twoSpace">- Disk surface is logically divided into tracks, which are subdivided into sectors </p>
+        <p class="twoSpace">- The disk controller determines the logical interaction between the device and the computer </p>
+        <p class="oneSpace">- Solid-state disks – faster than magnetic disks, nonvolatile </p>
+        <p class="twoSpace">- Various technologies </p>
+        <p class="twoSpace">- Becoming more popular </p>
+
+        <p> </p>
+        <p class="oneSpace">- Storage systems organized in hierachry </p>
+        <p class="twoSpace">- Speed </p>
+        <p class="twoSpace">- Cost </p>
+        <p class="twoSpace">- Volatility </p>
+        <p class="oneSpace"><strong>- Caching </strong> - copying information into faster storage system; main memory can be viewed as a cache for secondary storage </p>
+        <p class="oneSpace"><strong>- Device Driver </strong> - each device controller to manage I/O</p>
+        <p class="twoSpace">- Provides uniform interface between controller and kernel </p>
+        <img class="oneSpace" src="525-0112-Image3.jpg" alt="0112-Image2"/>
+
         <div>
             <p> </p>
             <p class="oneSpace"> </p>
