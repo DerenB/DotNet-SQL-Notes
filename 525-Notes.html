@@ -31,9 +31,13 @@
     <div class="sectionNote">
         <h2 class="sectionHeader">Table of Contents</h2>
         <p><strong>Textbook Notes</strong></p>
-            <p class="oneSpace"><a href="#chapterOne">Chapter One</a> - What is an Operating System</p>
+            <p class="oneSpace"><a href="#chapterOne">Chapter One</a> </p>
         <p><strong>Class Notes</strong></p>
-            <p class="oneSpace"><a href="#0112">01-12</a> - </p>
+            <p class="oneSpace"><a href="#0112">01-12</a> - What is an Operating System</p>
+            <p class="twoSpace"><a href="#0112-Section1">What Operating Systems Do</a> </p>
+            <p class="twoSpace"><a href="#0112-Section2">Common Functions of Interrupts</a> </p>
+            <p class="twoSpace"><a href="#0112-Section3">I/O Structure</a> </p>
+            <p class="twoSpace"><a href="#0112-Section4">Storage Structure</a> </p>
         <p><strong>Template</strong></p>
 
         <div>
@@ -73,97 +77,114 @@
         <p class="oneSpace"><strong>- 2) Operating System </strong> - Controls and coordinates use of hardware among various applications </p>
         <p class="oneSpace"><strong>- 3) Application Programs </strong> - define the ways in which the system resources are used to solve the computing problems</p>
         <p class="oneSpace"><strong>- 4) Users </strong> - People, machines, other computers</p>
+        <br>
 
-        <p>- What Operating Systems Do </p>
-        <p class="oneSpace">- Users want convenience, ease of use </p>
-        <p class="oneSpace">- Shared computers, like a mainframe, must keep all users happy </p>
-        <p class="oneSpace">- Some computers have little or no user interface, such as embedded computers in devices and automobiles</p>
+        <div id="0112-Section1">
+            <p>- What Operating Systems Do </p>
+            <p class="oneSpace">- Users want convenience, ease of use </p>
+            <p class="oneSpace">- Shared computers, like a mainframe, must keep all users happy </p>
+            <p class="oneSpace">- Some computers have little or no user interface, such as embedded computers in devices and automobiles</p>
 
-        <p>- Operating System Definition </p>
-        <p class="oneSpace">- OS is a resource allocator </p>
-            <p class="twoSpace">- Manages all resources </p>
-            <p class="twoSpace">- Decides between conflicting requests for efficient and fair resource use </p>
-        <p class="oneSpace">- OS is a control program </p>
-            <p class="twoSpace">- Controls execution of programs to prevent errors and improper use of the computer </p>
-        <p class="oneSpace">- No universally accepted definition </p>
+            <p>- Operating System Definition </p>
+            <p class="oneSpace">- OS is a resource allocator </p>
+                <p class="twoSpace">- Manages all resources </p>
+                <p class="twoSpace">- Decides between conflicting requests for efficient and fair resource use </p>
+            <p class="oneSpace">- OS is a control program </p>
+                <p class="twoSpace">- Controls execution of programs to prevent errors and improper use of the computer </p>
+            <p class="oneSpace">- No universally accepted definition </p>
 
-        <p><strong>- Bootstrap Program</strong> - loaded at power-up or reboot</p>
-        <p class="oneSpace">- Typically stored in ROM or EPROM, generally known as firmware</p>
-        <p class="oneSpace">- Initializes all aspects of system</p>
-        <p class="oneSpace">- Loads operating system kernel and starts execution</p>
+            <p><strong>- Bootstrap Program</strong> - loaded at power-up or reboot</p>
+            <p class="oneSpace">- Typically stored in ROM or EPROM, generally known as firmware</p>
+            <p class="oneSpace">- Initializes all aspects of system</p>
+            <p class="oneSpace">- Loads operating system kernel and starts execution</p>
 
-        <p>- Computer-System Operation </p>
-        <p class="oneSpace">- One or more CPUs, device controllers connect through common bus providing access to shared memory </p>
-        <p class="oneSpace">- Concurrent execution of CPUs and devices competing for memory cycles </p>
-            <img class="twoSpace" src="525-0112-Image1.jpg" alt="0112-Image1"/>
-        <p class="oneSpace">- I/O devices and the CPU can execute concurrently </p>
-        <p class="oneSpace">- Each device controller is in charge of a particular device type </p>
-        <p class="oneSpace">- Each device controller has a local buffer </p>
-        <p class="oneSpace">- CPU moves data from/to main memory to/from local buffers </p>
-        <p class="oneSpace">- I/O is from the device to local buffer of controller </p>
-        <p class="oneSpace">- Device controller informs CPU that it has finished its operation by causing an interrupt </p>
-
-        <p>- Common Functions of Interrupts </p>
-        <p class="oneSpace">- Interrupt transfers control to the interrupt service routine generally, through the interrupt vector, which contains the addresses of all the service routines </p>
-        <p class="oneSpace">- Interrupt architecture must save the address of the interrupted instruction </p>
-        <p class="oneSpace">- A trap or exception is a software-generated interrupt caused either by an error or a user request </p>
-        <p class="oneSpace">- An operating system is interrupt driven </p>
-
-        <p>- Interrupt Handling </p>
-        <p class="oneSpace">- The operating system preserves the state of the CPU by storing registers and the program counter </p>
-        <p class="oneSpace">- Determines which type of interrupt has occurred: </p>
-            <p class="twoSpace">- Polling </p>
-            <p class="twoSpace">- Vectored interupt system </p>
-        <p class="oneSpace">- Separate segments of code determine what action should be taken for each type of interrupt </p>
-            <img class="twoSpace" src="525-0112-Image2.jpg" alt="0112-Image2"/>
-
-
-        <p>- I/O Structure </p>
-        <p class="oneSpace">- After I/O starts, control returns to user program only upon I/O completion </p>
-        <p class="twoSpace">- Wait instruction idles the CPU until the next interrupt </p>
-        <p class="twoSpace">- Wait loop (contention for memory access) </p>
-            <p class="twoSpace">- At most one I/O request is outstanding at a time, no simultaneous I/O processing </p>
-
-        <p>- I/O Structure - Synch vs. Asynch </p>
-        <p class="oneSpace">- Synchronous: after I/O starts, control returns to user program only upon I/O completion </p>
-            <p class="twoSpace">- Wait instructions idles the CPU until the next interupt </p>
-            <p class="twoSpace">- Wait loop (contention for memory access) </p>
-            <p class="twoSpace">- At most one I/O request is outstanding at a time, no simultatenous I/O processing </p>
-        <p class="oneSpace">- Asynchronous: after I/O starts, control returns to user program without waiting for I/O completion </p>
-            <p class="twoSpace"><strong>- System Call </strong> - request to the OS to allow user to wait for I/O completion </p>
-            <p class="twoSpace"><strong>- Device status table </strong> - contains entry for each I/o device indicating its type, address, and state </p>
-            <p class="twoSpace">- OS indexes into I/O device table to determine device status and to modify table entry to include interrupt </p>
+            <p>- Computer-System Operation </p>
+            <p class="oneSpace">- One or more CPUs, device controllers connect through common bus providing access to shared memory </p>
+            <p class="oneSpace">- Concurrent execution of CPUs and devices competing for memory cycles </p>
+                <img class="twoSpace" src="525-0112-Image1.jpg" alt="0112-Image1"/>
+            <p class="oneSpace">- I/O devices and the CPU can execute concurrently </p>
+            <p class="oneSpace">- Each device controller is in charge of a particular device type </p>
+            <p class="oneSpace">- Each device controller has a local buffer </p>
+            <p class="oneSpace">- CPU moves data from/to main memory to/from local buffers </p>
+            <p class="oneSpace">- I/O is from the device to local buffer of controller </p>
+            <p class="oneSpace">- Device controller informs CPU that it has finished its operation by causing an interrupt </p>
+        </div>
+        <br>
         
-        <p>- Drivers </p>
-        <p class="oneSpace"><strong>- Device Driver </strong> - for each device cotnroller to manage I/O </p>
-            <p class="twoSpace">- Provides uniform interface between controller and kernal </p>
+        <div id="0112-Section2">
+            <p>- Common Functions of Interrupts </p>
+            <p class="oneSpace">- Interrupt transfers control to the interrupt service routine generally, through the interrupt vector, which contains the addresses of all the service routines </p>
+            <p class="oneSpace">- Interrupt architecture must save the address of the interrupted instruction </p>
+            <p class="oneSpace">- A trap or exception is a software-generated interrupt caused either by an error or a user request </p>
+            <p class="oneSpace">- An operating system is interrupt driven </p>
+    
+            <p>- Interrupt Handling </p>
+            <p class="oneSpace">- The operating system preserves the state of the CPU by storing registers and the program counter </p>
+            <p class="oneSpace">- Determines which type of interrupt has occurred: </p>
+                <p class="twoSpace">- Polling </p>
+                <p class="twoSpace">- Vectored interupt system </p>
+            <p class="oneSpace">- Separate segments of code determine what action should be taken for each type of interrupt </p>
+                <img class="twoSpace" src="525-0112-Image2.jpg" alt="0112-Image2"/>
+        </div>
+        <br>
 
-        <p>- Direct Memory Access Structure </p>
-        <p class="oneSpace">- Used for high-speed I/O devices able to transmit information at close to memory speeds </p>
-        <p class="oneSpace">- Device controller transfers blocks of data from buffer storage directly to main memory without CPU intervention </p>
-        <p class="oneSpace">- Only one interrupt is generated per block, rather than the one interrupt per byte </p>
+        <div id="0112-Section3">
+            <p>- I/O Structure </p>
+            <p class="oneSpace">- After I/O starts, control returns to user program only upon I/O completion </p>
+            <p class="twoSpace">- Wait instruction idles the CPU until the next interrupt </p>
+                <p class="twoSpace">- Wait loop (contention for memory access) </p>
+                <p class="twoSpace">- At most one I/O request is outstanding at a time, no simultaneous I/O processing </p>
+    
+            <p>- I/O Structure - Synch vs. Asynch </p>
+            <p class="oneSpace">- Synchronous: after I/O starts, control returns to user program only upon I/O completion </p>
+                <p class="twoSpace">- Wait instructions idles the CPU until the next interupt </p>
+                <p class="twoSpace">- Wait loop (contention for memory access) </p>
+                <p class="twoSpace">- At most one I/O request is outstanding at a time, no simultatenous I/O processing </p>
+            <p class="oneSpace">- Asynchronous: after I/O starts, control returns to user program without waiting for I/O completion </p>
+                <p class="twoSpace"><strong>- System Call </strong> - request to the OS to allow user to wait for I/O completion </p>
+                <p class="twoSpace"><strong>- Device status table </strong> - contains entry for each I/o device indicating its type, address, and state </p>
+                <p class="twoSpace">- OS indexes into I/O device table to determine device status and to modify table entry to include interrupt </p>
+            
+            <p>- Drivers </p>
+            <p class="oneSpace"><strong>- Device Driver </strong> - for each device cotnroller to manage I/O </p>
+                <p class="twoSpace">- Provides uniform interface between controller and kernal </p>
+    
+            <p>- Direct Memory Access Structure </p>
+            <p class="oneSpace">- Used for high-speed I/O devices able to transmit information at close to memory speeds </p>
+            <p class="oneSpace">- Device controller transfers blocks of data from buffer storage directly to main memory without CPU intervention </p>
+            <p class="oneSpace">- Only one interrupt is generated per block, rather than the one interrupt per byte </p>
+        </div>
+        <br>
+        
+        <div id="0112-Section4">
+            <p>- Storage Structure </p>
+            <p class="oneSpace">- Main memory - only large storage media that the CPU can access directly </p>
+                <p class="twoSpace">- Random Access </p>
+                <p class="twoSpace">- Typically Volatile </p>
+            <p class="oneSpace">- Secondary storage - extension of main memory that provides large nonvolatile storage capacity </p>
+            <p class="oneSpace">- Magnetic disks - rigid metal or glass platters covered with magnetic recording material  </p>
+                <p class="twoSpace">- Disk surface is logically divided into tracks, which are subdivided into sectors </p>
+                <p class="twoSpace">- The disk controller determines the logical interaction between the device and the computer </p>
+            <p class="oneSpace">- Solid-state disks - faster than magnetic disks, nonvolatile </p>
+                <p class="twoSpace">- Various technologies </p>
+                <p class="twoSpace">- Becoming more popular </p>
 
-        <p>- Storage Structure </p>
-        <p class="oneSpace">- Main memory – only large storage media that the CPU can access directly </p>
-        <p class="twoSpace">- Random Access </p>
-        <p class="twoSpace">- Typically Volatile </p>
-        <p class="oneSpace">- Secondary storage – extension of main memory that provides large nonvolatile storage capacity </p>
-        <p class="oneSpace">- Magnetic disks – rigid metal or glass platters covered with magnetic recording material  </p>
-        <p class="twoSpace">- Disk surface is logically divided into tracks, which are subdivided into sectors </p>
-        <p class="twoSpace">- The disk controller determines the logical interaction between the device and the computer </p>
-        <p class="oneSpace">- Solid-state disks – faster than magnetic disks, nonvolatile </p>
-        <p class="twoSpace">- Various technologies </p>
-        <p class="twoSpace">- Becoming more popular </p>
+            <p>- Storage Hierachry </p>
+            <p class="oneSpace">- Storage systems organized in hierachry </p>
+                <p class="twoSpace">- Speed </p>
+                <p class="twoSpace">- Cost </p>
+                <p class="twoSpace">- Volatility </p>
+            <p class="oneSpace"><strong>- Caching </strong> - copying information into faster storage system; main memory can be viewed as a cache for secondary storage </p>
+            <p class="oneSpace"><strong>- Device Driver </strong> - each device controller to manage I/O</p>
+                <p class="twoSpace">- Provides uniform interface between controller and kernel </p>
+            <img class="oneSpace" src="525-0112-Image3.jpg" alt="0112-Image2"/>
+        </div>
+        <br>
+        
 
-        <p> </p>
-        <p class="oneSpace">- Storage systems organized in hierachry </p>
-        <p class="twoSpace">- Speed </p>
-        <p class="twoSpace">- Cost </p>
-        <p class="twoSpace">- Volatility </p>
-        <p class="oneSpace"><strong>- Caching </strong> - copying information into faster storage system; main memory can be viewed as a cache for secondary storage </p>
-        <p class="oneSpace"><strong>- Device Driver </strong> - each device controller to manage I/O</p>
-        <p class="twoSpace">- Provides uniform interface between controller and kernel </p>
-        <img class="oneSpace" src="525-0112-Image3.jpg" alt="0112-Image2"/>
+        
+
+
 
         <div>
             <p> </p>
