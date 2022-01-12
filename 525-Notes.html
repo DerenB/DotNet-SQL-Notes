@@ -31,7 +31,7 @@
     <div class="sectionNote">
         <h2 class="sectionHeader">Table of Contents</h2>
         <p><strong>Textbook Notes</strong></p>
-            <p class="oneSpace"><a href="#chapterOne">Chapter One</a></p>
+            <p class="oneSpace"><a href="#chapterOne">Chapter One</a> - What is an Operating System</p>
         <p><strong>Class Notes</strong></p>
             <p class="oneSpace"><a href="#0112">01-12</a> - </p>
         <p><strong>Template</strong></p>
@@ -66,8 +66,57 @@
     </div>
 
     <div class="sectionNote" id="0112">
-        <h2 class="sectionHeader">01/12/22 Class Notes - </h2>
-       
+        <h2 class="sectionHeader">01/12/22 Class Notes - What is an Operating System</h2>
+        <p>- A program that acts as an intermediary between a user of a computer and the computer hardware </p>
+        <p>- Computer System can be divided into four components: </p>
+        <p class="oneSpace"><strong>- 1) Hardware </strong> - CPU, Memory, etc</p>
+        <p class="oneSpace"><strong>- 2) Operating System </strong> - Controls and coordinates use of hardware among various applications </p>
+        <p class="oneSpace"><strong>- 3) Application Programs </strong> - define the ways in which the system resources are used to solve the computing problems</p>
+        <p class="oneSpace"><strong>- 4) Users </strong> - People, machines, other computers</p>
+
+        <p>- What Operating Systems Do </p>
+        <p class="oneSpace">- Users want convenience, ease of use </p>
+        <p class="oneSpace">- Shared computers, like a mainframe, must keep all users happy </p>
+        <p class="oneSpace">- Some computers have little or no user interface, such as embedded computers in devices and automobiles</p>
+
+        <p>- Operating System Definition </p>
+        <p class="oneSpace">- OS is a resource allocator </p>
+            <p class="twoSpace">- Manages all resources </p>
+            <p class="twoSpace">- Decides between conflicting requests for efficient and fair resource use </p>
+        <p class="oneSpace">- OS is a control program </p>
+            <p class="twoSpace">- Controls execution of programs to prevent errors and improper use of the computer </p>
+        <p class="oneSpace">- No universally accepted definition </p>
+
+        <p><strong>- Bootstrap Program</strong> - loaded at power-up or reboot</p>
+        <p class="oneSpace">- Typically stored in ROM or EPROM, generally known as firmware</p>
+        <p class="oneSpace">- Initializes all aspects of system</p>
+        <p class="oneSpace">- Loads operating system kernel and starts execution</p>
+
+        <p>- Computer-System Operation </p>
+        <p class="oneSpace">- One or more CPUs, device controllers connect through common bus providing access to shared memory </p>
+        <p class="oneSpace">- Concurrent execution of CPUs and devices competing for memory cycles </p>
+            <img class="twoSpace" src="525-0112-Image1.jpg" alt="0112-Image1"/>
+        <p class="oneSpace">- I/O devices and the CPU can execute concurrently </p>
+        <p class="oneSpace">- Each device controller is in charge of a particular device type </p>
+        <p class="oneSpace">- Each device controller has a local buffer </p>
+        <p class="oneSpace">- CPU moves data from/to main memory to/from local buffers </p>
+        <p class="oneSpace">- I/O is from the device to local buffer of controller </p>
+        <p class="oneSpace">- Device controller informs CPU that it has finished its operation by causing an interrupt </p>
+
+        <p>- Common Functions of Interrupts </p>
+        <p class="oneSpace">- Interrupt transfers control to the interrupt service routine generally, through the interrupt vector, which contains the addresses of all the service routines </p>
+        <p class="oneSpace">- Interrupt architecture must save the address of the interrupted instruction </p>
+        <p class="oneSpace">- A trap or exception is a software-generated interrupt caused either by an error or a user request </p>
+        <p class="oneSpace">- An operating system is interrupt driven </p>
+
+        <p>- Interrupt Handling </p>
+        <p class="oneSpace">- The operating system preserves the state of the CPU by storing registers and the program counter </p>
+        <p class="oneSpace">- Determines which type of interrupt has occurred: </p>
+            <p class="twoSpace">- Polling </p>
+            <p class="twoSpace">- Vectored interupt system </p>
+        <p class="oneSpace">- Separate segments of code determine what action should be taken for each type of interrupt </p>
+            <img class="twoSpace" src="525-0112-Image2.jpg" alt="0112-Image2"/>
+
 
         <div>
             <p> </p>
