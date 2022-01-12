@@ -1,127 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>557 Notes</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="pageTitle">
-            <h1>Notes: COSC-557 Computer Game Programming</h1>
-        </div>
-        <a name="top"></a>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>557 Notes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pageTitle">
+        <h1>Notes: COSC-557 Computer Game Programming</h1>
+    </div>
+    <a name="top"></a>
 
-        <div class="sectionNote first">
-            <h2 class="sectionHeader">Links:</h2>
+    <div class="sectionNote first">
+        <h2 class="sectionHeader">Links:</h2>
 
-            <p><strong>- Textbook Table of Contents : </strong>
-                <a target="_blank" href="https://ebookreading.net/view/book/EB9780134659909_7.html#">Text</a>
-            </p>
-            <p><strong>- Textbook Home : </strong>
-                <a target="_blank" href="https://ebookreading.net/home">Website</a>
-            </p>
-            <p><strong>- Syllabus : </strong>
-                <a target="_blank" href="https://www.emunix.emich.edu/~mevett/GameProgramming/syllabus.html">Text</a>
-            </p>
-        </div>  
-        
-        <div class="sectionNote">
-            <h2 class="sectionHeader">Chapter 1 - Thinking Like a Designer</h2>
-            <p><strong>- Deblocking</strong> - strategies used to break up blocks of cards.</p>
-            <p>- Methods for deblocking:</p>
-            <p class="oneSpace">- Seven good riffle shuffles</p>
-            <p class="oneSpace">- Deal the cards into several different piles. THen shuffle these piles together.</p>
-            <p class="oneSpace">- Deal the cards out face-down into a large, spread-out pool. Then use both hands to move the cards around</p>
-            <p class="oneSpace">- 52 Pick-up</p>
+        <p><strong>- Textbook Table of Contents : </strong>
+            <a target="_blank" href="https://ebookreading.net/view/book/EB9780134659909_7.html#">Text</a>
+        </p>
+        <p><strong>- Textbook Home : </strong>
+            <a target="_blank" href="https://ebookreading.net/home">Website</a>
+        </p>
+        <p><strong>- Syllabus : </strong>
+            <a target="_blank" href="https://www.emunix.emich.edu/~mevett/GameProgramming/syllabus.html">Text</a>
+        </p>
+    </div>  
+    
+    <div class="sectionNote">
+        <h2 class="sectionHeader">Chapter 1 - Thinking Like a Designer</h2>
+        <p><strong>- Deblocking</strong> - strategies used to break up blocks of cards.</p>
+        <p>- Methods for deblocking:</p>
+        <p class="oneSpace">- Seven good riffle shuffles</p>
+        <p class="oneSpace">- Deal the cards into several different piles. THen shuffle these piles together.</p>
+        <p class="oneSpace">- Deal the cards out face-down into a large, spread-out pool. Then use both hands to move the cards around</p>
+        <p class="oneSpace">- 52 Pick-up</p>
 
 
-            <p> </p>
-            <p class="oneSpace"> </p>
-            <p class="twoSpace"> </p>
-            <p class="threeSpace"> </p>
+        <p> </p>
+        <p class="oneSpace"> </p>
+        <p class="twoSpace"> </p>
+        <p class="threeSpace"> </p>
 
-            <p><strong> </strong> </p>
-            <p class="oneSpace"><strong> </strong> </p>
-            <p class="twoSpace"><strong> </strong> </p>
+        <p><strong> </strong> </p>
+        <p class="oneSpace"><strong> </strong> </p>
+        <p class="twoSpace"><strong> </strong> </p>
 
-            <a href="#top">Top</a>
-        </div>
+        <a href="#top">Top</a>
+    </div>
 
-        <div class="sectionNote">
-            <h2 class="sectionHeader">01/12/22 Class Notes - Game Analysis Frameworks - Chp 2</h2>
-            <p>- TO-DO: Set up Unity</p>
-            <p class="oneSpace">- Install 2020.3.25F1 (LTS), whichever 2020 version</p>
-            <p class="oneSpace">- Go through download Archive to download 2017 version </p>
+    <div class="sectionNote">
+        <h2 class="sectionHeader">01/12/22 Class Notes - Game Analysis Frameworks - Chp 2</h2>
+        <p>- TO-DO: Set up Unity</p>
+        <p class="oneSpace">- Install 2020.3.25F1 (LTS), whichever 2020 version</p>
+        <p class="oneSpace">- Go through download Archive to download 2017 version </p>
             <p class="twoSpace">- Download latest 2017 LTS</p>
             <p class="twoSpace">- The 2017 version interface matches the textbook </p>
 
-            <p>- Common Frameworks for Ludology: MDA, Formal</p>
+        <p>- Common Frameworks for Ludology: MDA, Formal</p>
 
-            <p>- MDA: Mechanics, Dynamics, & Aesthetics </p>
-            <p class="oneSpace">- Proposed at the Game Developers Conference 2001 </p>
-            <p class="oneSpace">- Best known framework for game analysis </p>
-            <p class="oneSpace">- Three Elements: </p>
+        <p>- MDA: Mechanics, Dynamics, & Aesthetics </p>
+        <p class="oneSpace">- Proposed at the Game Developers Conference 2001 </p>
+        <p class="oneSpace">- Best known framework for game analysis </p>
+        <p class="oneSpace">- Three Elements: </p>
             <p class="twoSpace">- Mechanics: The particular components of the game at the level of data representation and algorithms </p>
             <p class="twoSpace">- Dynamics: the runtime behavior of the mechanics acting on player inputs and each others' outputs over time </p>
             <p class="twoSpace">- Aesthetics: The desirable emotional response </p>
-            <p class="oneSpace">- Designers go in the order: Aesthetics > Dynamics > Mechanics </p>
-            <p class="oneSpace">- Players experience the reverse order: Mechanics > Dynamics > Aesthetics </p>
-            <p class="oneSpace">- Example: Snakes and Ladders board game </p>
+        <p class="oneSpace">- Designers go in the order: Aesthetics > Dynamics > Mechanics </p>
+        <p class="oneSpace">- Players experience the reverse order: Mechanics > Dynamics > Aesthetics </p>
+        <p class="oneSpace">- Example: Snakes and Ladders board game </p>
             <p class="twoSpace">- Aesthetic - experiencing hope to win the game </p>
             <p class="twoSpace">- Dynamics </p>
             <p class="twoSpace"> </p>
 
-            <p>- Formal, Dramatic, and Dynamic Elements</p>
-            <p class="oneSpace">- Formal elements -  the elements that make games different from other forms of media or interaction. How games are different from books, movies, etc </p>
+        <p>- Formal, Dramatic, and Dynamic Elements</p>
+        <p class="oneSpace">- Formal elements -  the elements that make games different from other forms of media or interaction. How games are different from books, movies, etc </p>
             <p class="twoSpace">- A games ceases to be a game if the formal elements are removed </p>
             <p class="twoSpace">- Seven formal elements of games: </p>
-
-            <p class="threeSpace">-1) Player Interaction Pattern - How do players interact </p>
-            <p class="fourSpace">- Single-Player, One-on-one, Team versus team, Multilateral, Unilateral, Cooperative play </p>
-            <p class="threeSpace">-2) Objective - What are the players trying to achieve in the game? How do we know when has someone won the game?</p>
-            <p class="threeSpace">-3) Rules - Limit the players' actions by telling them what they may and may not do in the game</p>
-            <p class="fourSpace">- Many rules are explicit, but others are implicitly understood </p>
-            <p class="threeSpace">-4) Procedures - Actions taken by the player in the game</p>
-            <p class="fourSpace">- Rule tells the player what they can do, procedure dictated by that rule is the actual action </p>
-            <p class="fourSpace">- Often defined by the interaction of a number of rules </p>
-            <p class="threeSpace">-5) Resources - elements that have value in the game</p>
-            <p class="fourSpace">- Money, health </p>
-            <p class="threeSpace">-6) Boundaries - Where does the game end and reality begins?</p>
-            <p class="fourSpace">-  </p>
-            <p class="threeSpace">-7) </p>
-            
-            <p class="oneSpace">- Dramatic elements - the story or narrative of the game, including the premise. </p>
-            <p class="oneSpace">- Dynamic Elements - the game in motion. Include things like strategy, behavior, relationships between entities </p>
-
-
-            <p> </p>
-            <p class="oneSpace"> </p>
-            <p class="twoSpace"> </p>
-            <p class="threeSpace"> </p>
-            <p class="fourSpace"> </p>
-
-            <p><strong> </strong> </p>
-            <p class="oneSpace"><strong> </strong> </p>
-            <p class="twoSpace"><strong> </strong> </p>
-            <p class="threeSpace"><strong> </strong> </p>
-            <p class="fourSpace"><strong> </strong> </p>
-
-            <a href="#top">Top</a>
-        </div>
+                <p class="threeSpace">-1) Player Interaction Pattern - How do players interact </p>
+                    <p class="fourSpace">- Single-Player, One-on-one, Team versus team, Multilateral, Unilateral, Cooperative play </p>
+                <p class="threeSpace">-2) Objective - What are the players trying to achieve in the game? How do we know when has someone won the game?</p>
+                <p class="threeSpace">-3) Rules - Limit the players' actions by telling them what they may and may not do in the game</p>
+                    <p class="fourSpace">- Many rules are explicit, but others are implicitly understood </p>
+                <p class="threeSpace">-4) Procedures - Actions taken by the player in the game</p>
+                    <p class="fourSpace">- Rule tells the player what they can do, procedure dictated by that rule is the actual action </p>
+                    <p class="fourSpace">- Often defined by the interaction of a number of rules </p>
+                <p class="threeSpace">-5) Resources - elements that have value in the game</p>
+                    <p class="fourSpace">- Money, health </p>
+                <p class="threeSpace">-6) Boundaries - Where does the game end and reality begins?</p>
+                    <p class="fourSpace">- This concept is now known as the "Magic Circle"</p>
+                <p class="threeSpace">-7) Outcome - How did the game end?</p>
+                    <p class="fourSpace">- Both final and incremental outcomes </p>
+                    <p class="fourSpace">- Chess: One player wins and the other loses </p>
         
-        <!-- <script src="" async defer></script> -->
-        
-        
-    </body>
+        <p class="oneSpace"><strong>- Dramatic elements</strong> - the story or narrative of the game, including the premise. </p>
+            <p class="twoSpace">- Make the rules and resources more understandable </p>
+            <p class="twoSpace">- Give players greater emotional investments in the game </p>
+            <p class="twoSpace">- Three dramatic elements of games: </p>
+                <p class="threeSpace"><strong>-1) Premise </strong> - the basic story of the game world (theme) </p>
+                <p class="threeSpace"><strong>-2) Character</strong> - The individuals around whom the story revolves </p>
+                <p class="threeSpace"><strong>-3) </strong> </p>
+
+        <p class="oneSpace"><strong>- Dynamic Elements</strong> - the game in motion. Include things like strategy, behavior, relationships between entities  </p>
+
+        <p> </p>
+        <p class="oneSpace"> </p>
+        <p class="twoSpace"> </p>
+        <p class="threeSpace"> </p>
+        <p class="fourSpace"> </p>
+
+        <p><strong> </strong> </p>
+        <p class="oneSpace"><strong> </strong> </p>
+        <p class="twoSpace"><strong> </strong> </p>
+        <p class="threeSpace"><strong> </strong> </p>
+        <p class="fourSpace"><strong> </strong> </p>
+
+        <a href="#top">Top</a>
+    </div>
+    
+    <!-- <script src="" async defer></script> -->
+    
+    
+</body>
 </html>
 
 <!--
     TO-DO:
 
-    - Bullet colors
+    - Bullet styles
     - Links to chapter sections
     - Syntax highlighting for definitions, vocab, etc.
 
