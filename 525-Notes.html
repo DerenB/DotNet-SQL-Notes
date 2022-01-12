@@ -33,14 +33,30 @@
         <p><strong>Textbook Notes</strong></p>
             <p class="oneSpace"><a href="#chapterOne">Chapter One</a> </p>
         <p><strong>Class Notes</strong></p>
-            <p class="oneSpace"><a href="#0112">01-12</a> - What is an Operating System</p>
-            <p class="twoSpace"><a href="#0112-Section1">What Operating Systems Do</a> </p>
-            <p class="twoSpace"><a href="#0112-Section2">Common Functions of Interrupts</a> </p>
-            <p class="twoSpace"><a href="#0112-Section3">I/O Structure</a> </p>
-            <p class="twoSpace"><a href="#0112-Section4">Storage Structure</a> </p>
+            <p class="oneSpace">- <a href="#0112">01-12</a> - What is an Operating System</p>
+                <p class="twoSpace">- <a href="#0112-Section1">What Operating Systems Do</a> </p>
+                    <p class="threeSpace">- Bootstrap Program</p>
+                    <p class="threeSpace">- Computer-System Operation </p>
+                <p class="twoSpace">- <a href="#0112-Section2">Common Functions of Interrupts</a> </p>
+                <p class="twoSpace">- <a href="#0112-Section3">I/O Structure</a> </p>
+                    <p class="threeSpace">- Drivers</p>
+                    <p class="threeSpace">- Direct Memory Access Structure</p>
+                <p class="twoSpace">- <a href="#0112-Section4">Storage Structure</a> </p>
+                    <p class="threeSpace">- Storage Hierachry </p>
+                    <p class="threeSpace">- Caching </p>
+                <p class="twoSpace">- <a href="#0112-Section5">Computer-System Architecture</a> </p>
+                    <p class="threeSpace">- A Dual-Core Design </p>
+                    <p class="threeSpace">- Clustered Systems </p>
+            <p class="twoSpace">- <a href="#0112-Section6">Operating System Structure</a> </p>
         <p><strong>Template</strong></p>
 
         <div>
+            <p> </p>
+            <p class="oneSpace"> </p>
+            <p class="twoSpace"> </p>
+            <p class="threeSpace"> </p>
+            <p class="fourSpace"> </p>
+
             <p><a href="#"></a> </p>
             <p class="oneSpace"><a href="#"></a> </p>
             <p class="twoSpace"><a href="#"></a> </p>
@@ -71,13 +87,15 @@
 
     <div class="sectionNote" id="0112">
         <h2 class="sectionHeader">01/12/22 Class Notes - What is an Operating System</h2>
-        <p>- A program that acts as an intermediary between a user of a computer and the computer hardware </p>
-        <p>- Computer System can be divided into four components: </p>
-        <p class="oneSpace"><strong>- 1) Hardware </strong> - CPU, Memory, etc</p>
-        <p class="oneSpace"><strong>- 2) Operating System </strong> - Controls and coordinates use of hardware among various applications </p>
-        <p class="oneSpace"><strong>- 3) Application Programs </strong> - define the ways in which the system resources are used to solve the computing problems</p>
-        <p class="oneSpace"><strong>- 4) Users </strong> - People, machines, other computers</p>
-        <br>
+        <div id="0112-Section0">
+            <p>- A program that acts as an intermediary between a user of a computer and the computer hardware </p>
+            <p>- Computer System can be divided into four components: </p>
+            <p class="oneSpace"><strong>- 1) Hardware </strong> - CPU, Memory, etc</p>
+            <p class="oneSpace"><strong>- 2) Operating System </strong> - Controls and coordinates use of hardware among various applications </p>
+            <p class="oneSpace"><strong>- 3) Application Programs </strong> - define the ways in which the system resources are used to solve the computing problems</p>
+            <p class="oneSpace"><strong>- 4) Users </strong> - People, machines, other computers</p>
+        </div>
+        <hr class="break">
 
         <div id="0112-Section1">
             <p>- What Operating Systems Do </p>
@@ -101,7 +119,7 @@
             <p>- Computer-System Operation </p>
             <p class="oneSpace">- One or more CPUs, device controllers connect through common bus providing access to shared memory </p>
             <p class="oneSpace">- Concurrent execution of CPUs and devices competing for memory cycles </p>
-                <img class="twoSpace" src="525-0112-Image1.jpg" alt="0112-Image1"/>
+                <img class="twoSpace image" src="525-0112-Image1.jpg" alt="0112-Image1"/>
             <p class="oneSpace">- I/O devices and the CPU can execute concurrently </p>
             <p class="oneSpace">- Each device controller is in charge of a particular device type </p>
             <p class="oneSpace">- Each device controller has a local buffer </p>
@@ -109,7 +127,7 @@
             <p class="oneSpace">- I/O is from the device to local buffer of controller </p>
             <p class="oneSpace">- Device controller informs CPU that it has finished its operation by causing an interrupt </p>
         </div>
-        <br>
+        <hr class="break">
         
         <div id="0112-Section2">
             <p>- Common Functions of Interrupts </p>
@@ -124,9 +142,9 @@
                 <p class="twoSpace">- Polling </p>
                 <p class="twoSpace">- Vectored interupt system </p>
             <p class="oneSpace">- Separate segments of code determine what action should be taken for each type of interrupt </p>
-                <img class="twoSpace" src="525-0112-Image2.jpg" alt="0112-Image2"/>
+                <img class="twoSpace image" src="525-0112-Image2.jpg" alt="0112-Image2"/>
         </div>
-        <br>
+        <hr class="break">
 
         <div id="0112-Section3">
             <p>- I/O Structure </p>
@@ -154,7 +172,7 @@
             <p class="oneSpace">- Device controller transfers blocks of data from buffer storage directly to main memory without CPU intervention </p>
             <p class="oneSpace">- Only one interrupt is generated per block, rather than the one interrupt per byte </p>
         </div>
-        <br>
+        <hr class="break">
         
         <div id="0112-Section4">
             <p>- Storage Structure </p>
@@ -177,13 +195,72 @@
             <p class="oneSpace"><strong>- Caching </strong> - copying information into faster storage system; main memory can be viewed as a cache for secondary storage </p>
             <p class="oneSpace"><strong>- Device Driver </strong> - each device controller to manage I/O</p>
                 <p class="twoSpace">- Provides uniform interface between controller and kernel </p>
-            <img class="oneSpace" src="525-0112-Image3.jpg" alt="0112-Image2"/>
+            <img class="oneSpace image" src="525-0112-Image3.jpg" alt="0112-Image3"/>
+
+            <p>- Caching </p>
+            <p class="oneSpace">- Important principle, performed at many levels in a computer (in hardware, operating system, software) </p>
+            <p class="oneSpace">- Information in use copied from slower to faster storage temporarily </p>
+            <p class="oneSpace">- Faster storage (cache) checked first to determine if information is there </p>
+                <p class="twoSpace">- If it is, information used directly from the cache (fast) </p>
+                <p class="twoSpace">- If not, data copied to cache and used there </p>
+            <p class="oneSpace">- Cache smaller than storage being cached </p>
+                <p class="twoSpace">- Cache management important design problem </p>
+                <p class="twoSpace">- Cache size and replacement policy </p>
         </div>
-        <br>
+        <hr class="break">
         
+        <div id="0112-Section5">
+            <p>- Computer-System Architecture </p>
+            <p class="oneSpace">- Most systems use a single general-purpose processor (PDAs through mainframes) </p>
+                <p class="twoSpace">- Most systems have special-purpose processors as well </p>
+            <p class="oneSpace"><strong>- Multiprocessors </strong> systems growing in use and importance</p>
+                <p class="twoSpace">- Also known as parallel systems, tightly-coupled systems </p>
+                <p class="twoSpace">- Advantages include: </p>
+                    <p class="threeSpace">- 1) Increased throughput </p>
+                    <p class="threeSpace">- 2) Economy of Scale </p>
+                    <p class="threeSpace">- 3) Increased reliability – graceful degradation or fault tolerance </p>
+                <p class="twoSpace">- Two types: </p>
+                    <p class="threeSpace">- 1) Asymmetric Multiprocessing </p>
+                    <p class="threeSpace">- 2) Symmetric Multiprocessing </p>
+            <img class="oneSpace image" src="525-0112-Image4.jpg" alt="0112-Image4"/>
+            <p></p>
+            <img class="oneSpace image" src="525-0112-Image5.jpg" alt="0112-Image5"/>
 
-        
+            <p>- A Dual-Core Design</p>
+            <p class="oneSpace">- UMA (uniform memory access) and NUMA architecture variations </p>
+            <p class="oneSpace">- Multi-chip and multicore </p>
+            <p class="oneSpace">- Systems containing all chips vs. blade servers </p>
+                <p class="twoSpace">- Chassis containing multiple separate systems </p>
 
+            <p>- Clustered Systems</p>
+            <p class="oneSpace">- Like multiprocessor systems, but multiple systems working together </p>
+                <p class="twoSpace">- Usually sharing storage via a storage-area network (SAN) </p>
+                <p class="twoSpace">- Provides a high-availability service which survives failures </p>
+                    <p class="threeSpace"><strong>- Asymmetric clustering </strong>has one machine in hot-standby mode  </p>
+                    <p class="threeSpace"><strong>- Symmetric clustering </strong>has multiple nodes running applications, monitoring each other </p>
+                <p class="twoSpace">- Some clusters are for high-performance computing (HPC) </p>
+                    <p class="threeSpace">- Applications must be written to use parallelization </p>
+                <p class="twoSpace">- Some have distributed lock manager (DLM) to avoid conflicting operations </p>
+        </div>
+        <hr class="break">
+
+        <div id="0112-Section6">
+            <p>- Operating System Structure </p>
+            <p class="oneSpace"><strong>- Multiprogramming </strong>needed for efficiency </p>
+                <p class="twoSpace">- Single user cannot keep CPU and I/O devices busy at all times </p>
+                <p class="twoSpace">- Multiprogramming organizes jobs (code and data) so CPU always has one to execute </p>
+                <p class="twoSpace">- A subset of total jobs in system is kept in memory </p>
+                <p class="twoSpace">- One job selected and run via job scheduling </p>
+                <p class="twoSpace">- When it has to wait (for I/O for example), OS switches to another job </p>
+            
+            <p class="oneSpace"><strong>- Timesharing (multitasking) </strong>is logical extension in which CPU switches jobs so frequently that users can interact with each job while it is running, creating interactive computing </p>
+                <p class="twoSpace">- Response time should be < 1 second </p>
+                <p class="twoSpace">- Each user has at least one program executing in memory -> process </p>
+                <p class="twoSpace">- If several jobs ready to run at the same time -> CPU scheduling </p>
+                <p class="twoSpace">- If processes don't fit in memory, swapping moves them in and out to run </p>
+                <p class="twoSpace">- Virtual memory allows execution of processes not completely in memory </p>
+        </div>
+        <hr class="break">
 
 
         <div>
