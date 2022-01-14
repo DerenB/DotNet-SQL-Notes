@@ -32,7 +32,13 @@ body {
 }
 
 .first {
+    background-image: url("MatrixRectangleMirrored.gif");
     padding-top: 75px;
+}
+
+#linkSection {
+    padding-top: 100px;
+    color: white;
 }
 
 .sectionNote {
