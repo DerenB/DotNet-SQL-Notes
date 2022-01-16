@@ -40,6 +40,7 @@
         <h2 class="sectionHeader">Table of Contents</h2>
         <p><a href="#folderItem">Folder Items</a></p>
         <p><a href="#buildingProject">Creating and Building a Project</a></p>
+        <p><a href="#writingCS">Writing C# within HTML file</a></p>
         <p><a href="#pageDetails">Page Details</a></p>
         <p><a href="#layoutDetails">Layout cshtml Details</a></p>
         <p><a href="#indexDetails">Index.cshtml Details</a></p>
@@ -86,6 +87,49 @@
         <p>- Always check "Configure for HTTPS".</p> 
         <p>- IIS Express - Internet Information Server. </p>
         <p>- RazorPagesUI - Uses Kestrel, a command line web server.</p>
+
+        <p><strong>- Individual Page Items</strong></p>
+        <p class="oneSpace">- <strong>@page</strong> - Must be first line of file</p>
+        <p class="twoSpace">- Indicates that the file is a Razor page </p>
+        <p class="twoSpace"> </p>
+
+        <div>
+            <p> </p>
+            <p class="oneSpace"> </p>
+            <p class="twoSpace"> </p>
+            <p class="threeSpace"> </p>
+            <p class="fourSpace"> </p>
+
+            <p><strong></strong></p>
+            <p class="oneSpace"><strong> </strong> </p>
+            <p class="twoSpace"><strong> </strong> </p>
+            <p class="threeSpace"><strong> </strong> </p>
+            <p class="fourSpace"><strong> </strong> </p>
+        </div>
+    </div>
+
+    <div class="sectionNote" id="writingCS">
+        <h2 class="sectionHeader">Writing C# within HTML file</h2>
+        <p>- C# expressions have to start with @ </p>
+        <p class="oneSpace"><strong>- Ex: </strong> &#60;h1&#62; @DateTime.Now.ToShortDateString() &#60;/h1&#62;</p>
+        <p>- C# expressions with spaces have to be surrounded with parentheses </p>
+        <p class="oneSpace"><strong>- Ex: </strong> &#60;p&#62; Last week this time: @(DateTime.Now - TimeSpan.FromDays(7)) &#60;/p&#62;</p>
+        <p>- Can surround multi-line code with brackets - { } </p>
+        <p>- If statement just needs one "@" at the IF. The else and else if do not need it.</p>
+
+        <div>
+            <p> </p>
+            <p class="oneSpace"> </p>
+            <p class="twoSpace"> </p>
+            <p class="threeSpace"> </p>
+            <p class="fourSpace"> </p>
+
+            <p><strong></strong></p>
+            <p class="oneSpace"><strong> </strong> </p>
+            <p class="twoSpace"><strong> </strong> </p>
+            <p class="threeSpace"><strong> </strong> </p>
+            <p class="fourSpace"><strong> </strong> </p>
+        </div>
     </div>
 
     <div class="sectionNote" id="pageDetails">
