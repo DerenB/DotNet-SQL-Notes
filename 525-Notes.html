@@ -297,6 +297,90 @@
             <p class="fourSpace"><strong> </strong> </p>
         </div>
     </div>
+    
+    <div class="sectionNote" id="0119">
+        <h2 class="sectionHeader">01/19/22 Class Notes - Process Management</h2>
+        <p>- A process is a program in execution. It is a unit of work within the system. Program is a <em>passive entity</em>, process is an <em>active entity</em>. </p>
+        <p>- Process needs resources to accomplish its task </p>
+        <p class="oneSpace">- CPU, memory, I/O, files </p>
+        <p class="oneSpace">- Initialization data </p>
+        <p>- Process termination requires reclaim of any reusable resources</p>
+        <p>- Single-threaded process has one <strong>program counter</strong> specifying location of next instruction to execute</p>
+        <p class="oneSpace">- Process executes instructions sequentially, one at a time, until completion</p>
+        <p>- Multi-threaded process has one program counter per thread</p>
+        <p>- Typically system has many processes, some user, some operating system running concurrently on one or more CPUs</p>
+        <p class="oneSpace">- Concurrency by multiplexing the CPUs among the processes / threads</p>
+
+        <p>- The operating system is responsible for the following activities in connection with process management: </p>
+        <p class="oneSpace">- Creating and deleting both user and system processes</p>
+        <p class="oneSpace">- Suspending and resuming processes</p>
+        <p class="oneSpace">- Providing mechanisms for process synchronization</p>
+        <p class="oneSpace">- Providing mechanisms for process communication</p>
+        <p class="oneSpace">- Providing mechanisms for deadlock handling </p>
+        <hr class="break">
+
+        <p><strong>- Memory Management </strong></p>
+        <p class="oneSpace">- All data in memory before and after processing </p>
+        <p class="oneSpace">- All instructions in memory in order to execute </p>
+        <p class="oneSpace">- Memory management determines what is in memory when </p>
+            <p class="twoSpace">- Optimizing CPU utilization and computer response to users </p>
+        <p class="oneSpace">- Memory management activities </p>
+            <p class="twoSpace">- Keeping track of which parts of memory are currently being used and by whom </p>
+            <p class="twoSpace">- Deciding which processes (or parts thereof) and data to move into and out of memory </p>
+            <p class="twoSpace">- Allocating and deallocating memory space as needed </p>
+
+        <p><strong>- Storage Management</strong></p>
+        <p class="oneSpace">- OS provides uniform, logical view of information storage</p>
+            <p class="twoSpace">- Abstracts physical properties to logical storage unit  - file</p>
+            <p class="twoSpace">- Each medium is controlled by device (i.e., disk drive, tape drive)</p>
+                <p class="threeSpace">- Varying properties include access speed, capacity, data-transfer rate, access method (sequential or random)</p>
+        <p class="oneSpace">- File-System management</p>
+            <p class="twoSpace">- Files usually organized into directories</p>
+            <p class="twoSpace">- Access control on most systems to determine who can access what</p>
+            <p class="twoSpace">- OS activities include</p>
+                <p class="threeSpace">- Creating and deleting files and directories</p>
+                <p class="threeSpace">- Primitives to manipulate files and dirs</p>
+                <p class="threeSpace">- Mapping files onto secondary storage</p>
+                <p class="threeSpace">- Backup files onto stable (non-volatile) storage media</p>
+
+        <p><strong>- Mass-Storage Management</strong></p>
+        <p class="oneSpace">- Usually disks used to store data that does not fit in main memory or data that must be kept for a “long” period of time</p>
+        <p class="oneSpace">- Proper management is of central importance</p>
+        <p class="oneSpace">- Entire speed of computer operation hinges on disk subsystem and its algorithms</p>
+        <p class="oneSpace">- OS activities</p>
+            <p class="twoSpace">- Free-space management</p>
+            <p class="twoSpace">- Storage allocation</p>
+            <p class="twoSpace">- Disk scheduling</p>
+        <p class="oneSpace">- Some storage need not be fast</p>
+            <p class="twoSpace">- Tertiary storage includes optical storage, magnetic tape</p>
+            <p class="twoSpace">- Still must be managed</p>
+            <p class="twoSpace">- Varies between WORM (write-once, read-many-times) and RW (read-write)</p>
+        <img class="oneSpace image" src="525/0119-Image1.jpg" alt="0119-Image1"/>
+        <hr class="break">
+
+        <p><strong>I/O Subsystem</strong></p>
+        <p>- One purpose of OS is to hide peculiarities of hardware devices 
+            from the user </p>
+        <p>- I/O subsystem responsible for </p>
+        <p class="oneSpace">- Memory management of I/O including buffering (storing data temporarily while it is being transferred), caching (storing parts of data in faster storage for performance), spooling (the overlapping of output of one job with input of other jobs)</p>
+        <p class="oneSpace">- General device-driver interface</p>
+        <p class="oneSpace">- Drivers for specific hardware devices</p>
+
+
+        <div>
+            <p>- </p>
+            <p class="oneSpace">- </p>
+            <p class="twoSpace">- </p>
+            <p class="threeSpace">- </p>
+            <p class="fourSpace">- </p>
+
+            <p><strong>-</strong> - </p>
+            <p class="oneSpace"><strong>- </strong> - </p>
+            <p class="twoSpace"><strong>- </strong> - </p>
+            <p class="threeSpace"><strong>- </strong> - </p>
+            <p class="fourSpace"><strong>- </strong> - </p>
+        </div>
+    </div>
 
     <div class="sectionNote" id="template">
         <h2 class="sectionHeader">BLANK TEMPLATE</h2>

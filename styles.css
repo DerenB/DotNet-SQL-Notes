@@ -89,7 +89,7 @@ a, a:visited, a:hover, a:active {
 
 .image {
     border: 2px solid black;
-    width: 1000px;
+    width: 80%;
     padding-left: 0px;
     margin-left: 30px;
 }
