@@ -505,6 +505,57 @@
         <p class="oneSpace">- Booting </p>
         <p class="twoSpace">- Modern hardware often uses UEFI (unified extensible firmware interfaces) rather than BIOS, as it provided better support for 64-bit systems </p>
 
+        <p><strong>Chapter 3 - Processes</strong></p>
+        <p>- Process Concept </p>
+        <p class="oneSpace">- An operating system executes a variety of programs. </p>
+        <p class="twoSpace">- Batch system - <strong>jobs</strong> </p>
+        <p class="twoSpace">- Time-shared systems - <strong>user programs</strong> </p>
+        <p class="oneSpace">- Program is passive entity stored on disk (executable file), process is active </p>
+        <p class="twoSpace">- Program becomes process when executable file loaded into memory </p>
+        <p class="oneSpace">- Execution of program started via GUI mouse clicks, command line entry of its name, etc </p>
+        <p class="oneSpace">- One program can consist of several processes </p>
+
+        <p>- Process Components in Memory </p>
+        <p class="oneSpace">- The program code, also called <strong>text section</strong> </p>
+        <p class="oneSpace">- Current activity including <strong>program counter</strong>, processor registers </p>
+        <p class="oneSpace">- <strong>Stack</strong> containing temporary data </p>
+        <p class="twoSpace">- Function parameters, return addresses, local variables </p>
+        <p class="oneSpace"><strong>- Data section </strong>containing global variables </p>
+        <p class="oneSpace"><strong>- Heap </strong>containing memory dynamically allocated during run time </p>
+
+        <p>-<strong>Process State</strong> - As a process executes, it changes state </p>
+        <p class="oneSpace">- New: The process is being created </p>
+        <p class="oneSpace">- Running: Instructions are being executed </p>
+        <p class="oneSpace">- Waiting: The Process is waiting for some event to occur </p>
+        <p class="oneSpace">- Ready: The process is waiting to be assigned to a processor </p>
+        <p class="oneSpace">- Terminated: The process has finished execution </p>
+
+        <p>- Process Control Block (PCB) </p>
+        <p><strong>- Process Scheduler</strong> - selects among available processes for next execution on CPU</p>
+        <p class="oneSpace">- Maximize CPU user, quickly switch processes onto CPU for time sharing </p>
+        <p>- OS Maintains scheduling queues of processes </p>
+        <p class="oneSpace"><strong>- Job Queue </strong>- set of all processes in the system </p>
+        <p class="oneSpace"><strong>- Ready Queue </strong>- set of all processes residing in main memory, ready and waiting to execute </p>
+        <p class="oneSpace"><strong>- Device Queues </strong>- set of processes waiting for an I/O device </p>
+        <p class="oneSpace">- Processes migrate among the various queues </p>
+
+        <p>- Schedules </p>
+        <p class="oneSpace"><strong>- Long-term Scheduler </strong>(or job scheduler) - selects which processes should be brought into the ready queue </p>
+        <p class="oneSpace"><strong>- Short-term Scheduler </strong>(or CPU scheduler) - selects which process should be executed next and allocates CPU </p>
+        <p class="oneSpace">- Short-term scheduler is invoked very frequently (milliseconds) </p>
+        <p class="oneSpace"><strong>- Medium-term Scheduler </strong>- can be added if degree of multi-programming needs to be changed </p>
+
+        <p>- Multitasking in Mobile Systems </p>
+        <p class="oneSpace">- Some systems / early systems allow only one process to run, others suspended </p>
+        <p class="oneSpace">- Due to screen real estate IOS provides for: </p>
+        <p class="twoSpace">- Single foreground process, controlled via user interface </p>
+        <p class="twoSpace">- Multiple background processes, in memory, running, but not on the display </p>
+        <p class="twoSpace"> </p>
+        <p class="oneSpace"> </p>
+        <p class="twoSpace"> </p>
+        <p class="twoSpace"> </p>
+        <p class="twoSpace"> </p>
+
 
         <div>
             <p> </p>
