@@ -424,6 +424,103 @@
         </div>
     </div>
 
+    <div class="sectionNote" id="0124">
+        <h2 class="sectionHeader">01/24/22 Class Notes - Continued</h2>
+
+        <p>- Background services </p>
+        <p class="oneSpace">- Launch at boot time, some for system startup, then terminate. Some from system boot to shutdown. </p>
+        <p class="oneSpace">- Provide facilities like disk checking, process scheduling, error </p>
+        <p class="oneSpace">- Run in user context not kernel </p>
+
+        <p>- OS Design and Implementation </p>
+        <p class="oneSpace">- Design and implementation of OS not "solvable", but some approaches have proven successful </p>
+        <p class="oneSpace">- Internal structure of different OS can vary. Start by defining goals and specifications </p>
+        <p class="oneSpace"><strong>- User Goals </strong>- operating system should be convenient to use, easy to learn, reliable, sage, and fast </p>
+        <p class="oneSpace"><strong>- System Goals </strong>- operating system should be easy to design, implement, and maintain, as well as flexible, reliable, error-free, efficient </p>
+        <p class="oneSpace">- Mechanisms determine how to do something, policies decide what will be done. </p>
+        <p class="twoSpace">- The seperation of policy from mechanism is a very important principle, it allows maximum flexibility if policy decisions are to be changed later </p>
+        <p class="oneSpace">- Variations </p>
+        <p class="twoSpace">- Early OS in assembly language </p>
+        <p class="twoSpace">- Then system programming languages like Algol, PL/1 </p>
+        <p class="twoSpace">- Now C, C++ </p>
+        <p class="oneSpace">- Actually usually a mix of languages </p>
+        <p class="twoSpace">- Lowest levels in assembly </p>
+        <p class="twoSpace">- Main body in C </p>
+        <p class="twoSpace">- Systems programs in C, C++, scripting languages like PERL, Python, shell scripts </p>
+        <p class="oneSpace">- More high level languages easier to port to other hardware but slower </p>
+        <p class="oneSpace">- Emulation can allow an OS to run on non-native hardware </p>
+
+        <p>- OS Structure </p>
+        <p class="oneSpace">- General-purpose OS is very large program </p>
+        <p class="oneSpace">- Various ways to structure one as follows </p>
+        <p class="oneSpace">- MS-DOS written to provide the most functionality in the last space </p>
+        <p class="twoSpace">- Not divided into modules </p>
+        <p class="twoSpace">- Although MS-DOS has some structure, its interfaces and levels of functionality are not well separated </p>
+        <p class="oneSpace"><strong>- UNIX </strong>- limited by hardware functionality, the original UNIX operating system had limited structuring. The UNIX OS consists of two separable parts </p>
+        <p class="twoSpace"><strong>- System Porgrams </strong>- doing system level work as a standalone program </p>
+        <p class="twoSpace"><strong>- The Kernel </strong>- low level stuff. CPU scheduling, memory management </p>
+
+        <p><strong>- Microkernel System Structure</strong></p>
+        <p class="oneSpace">- Moves as much from the kernel into user space </p>
+        <p class="oneSpace">- Mach example of microkernel. Mac OS X kernel (Darwin) partly based on Mach </p>
+        <p class="oneSpace">- Communication takes place between user modules using message passing </p>
+        <p class="oneSpace">- Benefits: </p>
+        <p class="twoSpace">- Easier to extend a microkernel </p>
+        <p class="twoSpace">- Easier to port the operating system to new architectures </p>
+        <p class="twoSpace">- More reliable (less code is running in kernel mode) </p>
+        <p class="twoSpace"> </p>
+
+        <p><strong>- Modules</strong></p>
+        <p class="oneSpace">- Most modern OS implement <strong>loadable kernel modules</strong> </p>
+        <p class="twoSpace">- Uses object-oriented approach </p>
+        <p class="twoSpace">- Each core component is separate </p>
+        <p class="twoSpace">- Each talks to the others over known interfaces </p>
+        <p class="twoSpace">- Each is loadable as needed within the kernel </p>
+        <p class="oneSpace">- Overall, similar to layers but with more flexibility. Linux, Solaris, etc </p>
+
+        <p><strong>- Hybrid Systems</strong></p>
+        <p class="oneSpace">- Most modern operating systems actually not one pure model </p>
+        <p class="oneSpace">- Apple Mac OS X hybrid, layered, Aqua UI plus Cocoa programming environment </p>
+
+        <p>- Operating-System Debugging </p>
+        <p class="oneSpace">- Debugging is finding and fixing errors, or bugs </p>
+        <p class="oneSpace">- OS's generate log files containing error information </p>
+        <p class="oneSpace">- Failure of an application can generate <strong>core dump</strong> file capturing memory of the process </p>
+        <p class="oneSpace">- Operating system failure can generate <strong>crash dump</strong> files containing kernel memory </p>
+        <p class="oneSpace">- Beyond crashes, performance tuning can optimize system performance </p>
+        <p class="twoSpace">- Sometimes using <strong><em>trace listings</em></strong> of activities, recorded for analysis </p>
+        <p class="twoSpace">- <strong>Profiling</strong> is periodic sampling of instruction pointers to look for statistical trends </p>
+        <p class="oneSpace">- Improve performance by removing bottlenecks </p>
+        <p class="oneSpace">- OS must provide means of computing and displaying measures of system behavior </p>
+        <p class="twoSpace">- Windows Task Manager </p>
+
+        <p><strong>- System Boot</strong></p>
+        <p class="oneSpace">- When power initialized on system, execution starts at a fixed memory location </p>
+        <p class="twoSpace">- Firmware ROM used to hold initial boot code </p>
+        <p class="oneSpace">- Operating System must be made available to hardware so hardware can start it </p>
+        <p class="twoSpace">- Small piece of code, <strong>bootstrap loader</strong>, stored in <strong>ROM</strong> or <strong>EEPROM</strong> locates the kernel, loads it into memory, and starts it </p>
+        <p class="twoSpace">- Sometimes two-step process where <strong>boot block</strong> at fixes location loaded by ROM code, which loads bootstrap loader from disk </p>
+        <p class="oneSpace">- Common bootstrap loader, <strong>GRUB</strong>, allows selection of kernel from multiple disks, versions, kernel options </p>
+        <p class="oneSpace">- Kernel loads and system is then running </p>
+        <p class="oneSpace">- Booting </p>
+        <p class="twoSpace">- Modern hardware often uses UEFI (unified extensible firmware interfaces) rather than BIOS, as it provided better support for 64-bit systems </p>
+
+
+        <div>
+            <p> </p>
+            <p class="oneSpace"> </p>
+            <p class="twoSpace"> </p>
+            <p class="threeSpace"> </p>
+            <p class="fourSpace"> </p>
+
+            <p><strong></strong></p>
+            <p class="oneSpace"><strong> </strong> </p>
+            <p class="twoSpace"><strong> </strong> </p>
+            <p class="threeSpace"><strong> </strong> </p>
+            <p class="fourSpace"><strong> </strong> </p>
+        </div>
+    </div>
+
     <div class="sectionNote" id="template">
         <h2 class="sectionHeader">BLANK TEMPLATE</h2>
 
