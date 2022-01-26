@@ -81,13 +81,161 @@
         Banner
     </div>
 
+    <div>
+        <p>01-26 Notes - Chapter 3</p>
+        <ul>
+            <li><strong>Scheduler </strong>  </li>
+            <li><strong>Long-term scheduler </strong>- selects which processes should be brough into the ready queue </li>
+            <li><strong>Short-term scheduler </strong>- selects which process should be executed next and allocates CPU  </li>
+            <ul>
+                <li>Sometimes the only scheduler in a system  </li>
+            </ul>
+            <li>Short-term scheduler is invoked very frequently (milliseconds)  </li>
+        </ul>
+        <ul>
+            <li><strong>Context Switch</strong>  </li>
+            <li>When CPU switches to another process, the system must save the sate of the old process and load the saved state for the new process via a context switch</li>
+            <li>Context of a process represented in the PCB</li>
+            <li>Context-switch time is overhead; the system does no useful work while switching</li>
+            <ul>
+                <li>The more complex the OS and the PCB, longer the context switch</li>
+            </ul>
+            <li>Time dependent on hardware support</li>
+            <ul>
+                <li>Multiple Cores: some hardware provides multiple sets of registers per CPU</li>
+            </ul>
+        </ul>
+        <ul>
+            <li><strong>Process Creation</strong></li>
+            <li><strong>Parent </strong>process create children processes, which in turn, create other processes, forming a tree of processes</li>
+            <li>Generally, process identified and managed via a <strong>process identifier (pid)</strong></li>
+            <li>Resource sharing options</li>
+            <ul>
+                <li>Parent and children share all resources</li>
+                <li>Children share subset of parent's resources</li>
+                <li>Parent and child share no resources</li>
+            </ul>
+            <li>Execution options</li>
+            <ul>
+                <li>Parent and children execute concurrently</li>
+                <li>Parent waits until children terminate</li>
+            </ul>
+            <li>Address Space</li>
+            <ul>
+                <li>Child duplicate of parent</li>
+                <li>CHild has a program loaded into it</li>
+            </ul>
+            <li>UNIX examples</li>
+            <ul>
+                <li><strong>fork()</strong> system call creates new process</li>
+                <li><strong>exec()</strong> system call used after a fork() to replace the process' memory space with a new program</li>
+            </ul>
+        </ul>
+        <ul>
+            <li>Process Termination</li>
+            <li>Process executes last statement and asks the operating system to delete it. exit()</li>
+            <ul>
+                <li>Output data from child to parent</li>
+                <li>Process' resources are deallocated by operating system</li>
+            </ul>
+            <li>Parent may terminate execution of children process. abort()</li>
+            <ul>
+                <li>Child has exceeded allocated resources</li>
+                <li>Task assigned to child is no longer required</li>
+                <li>If parent is exiting:</li>
+                <ul>
+                    <li>Some operating systems do not allow child to continue if its parent terminates. All children terminiated: <strong>cascading termination</strong></li>
+                </ul>
+            </ul>
+            <li>Wait for termination, returning the pid</li>
+            <li>If no parent yet waiting, then terminated child process is a <strong>zombie</strong></li>
+            <li>if parent terminated, terminated child processes are <strong>orphans</strong></li>
+        </ul>
+        <ul>
+            <li>Interprocess Communication</li>
+            <li>Processes within a system may be independent or cooperating</li>
+            <li>Independent process cannot affect or be affected by the execution of another process</li>
+            <li>Cooperating process can affect or be affected by other processes, including sharing data</li>
+            <li>Reasons for cooperating processes:</li>
+            <ul>
+                <li>Information sharing</li>
+                <li>Computation speedup</li>
+                <li>Modularity</li>
+                <li>Convenience</li>
+            </ul>
+            <li>Cooperating processes need interprocess communication (IPC)</li>
+            <li>Two models of IPC</li>
+            <ul>
+                <li>Shared Memory</li>
+                <li>Message Passing</li>
+            </ul>
+        </ul>
+        <ul>
+            <li>Producer-Consumer Problem</li>
+            <li>Paradigm for cooperating processes, producer process produces information that is consumed by a consumer process</li>
+            <ul>
+                <li><strong>unbounded-buffer</strong> places no practical limit on the size of the buffer</li>
+                <li><strong>bounded-buffer</strong> assumes that there is a fixed buffer size</li>
+            </ul>
+            <li>Processes must name each other explicitly</li>
+            <ul>
+                <li><strong>send</strong> (P, message) - send a message to process P</li>
+                <li><strong>receive</strong> (Q, message) - receive a message from process Q</li>
+            </ul>
+            <li>Properties of communication link</li>
+            <ul>
+                <li>Links are established automatically</li>
+                <li>A link is associated with exactly one pair of communicating processes</li>
+                <li>Between each pair there exists exactly one link</li>
+                <li>The link may be unidirectional, but is usually bi-directional</li>
+            </ul>
+        </ul>
+        <ul>
+            <li>Indirect Communication</li>
+            <li>Messages are directed and received from mailboxes (also referred to as ports)</li>
+            <ul>
+                <li>Each mailbox has a unique id</li>
+                <li>Processes can communicate only if they share a mailbox</li>
+            </ul>
+            <li>Properties of communication link</li>
+            <ul>
+                <li>Link established only if processes share a common mailbox</li>
+                <li>A link may be associated with many processes</li>
+                <li>Each pair of processes may share several communication links</li>
+                <li>Link may be unidirectional or bi-directional</li>
+            </ul>
+            <li>Operations supported by OS</li>
+            <ul>
+                <li>Create a new mailbox</li>
+                <li>Send and receive messages through mailbox</li>
+                <li>Destroy a mailbox</li>
+            </ul>
+            <li>Primitives are defined as:</li>
+            <ul>
+                <li>send(A, message) - send a message to mailbox A</li>
+                <li>receive(A, messave) - receive a message from mailbox A</li>
+            </ul>
+            <li>Solutions</li>
+            <ul>
+                <li>Allow a link to be associated with at most two processes</li>
+                <li>Allow only one process at a time to execute a receive operation</li>
+                <li>Allow the system to select arbitrarily the receiver. Sender is notified who the receiver was</li>
+            </ul>
+        </ul>
+    </div>
 
 
     <ul>
-        <li>  </li>
+        <li></li>
     </ul>
 
-    <li>  </li>
+    <li></li>
+
+    <ul>
+        <li><strong>   </strong>  </li>
+    </ul>
+
+    <li><strong>   </strong>  </li>
 
     <p>test</p>
     <p class="oneSpace">test</p>
