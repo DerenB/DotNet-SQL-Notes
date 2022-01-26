@@ -24,14 +24,34 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color: yellow;
+    margin-top: 10px;
+    width: 95%;
+    margin-left: 2.5%;
+    text-align: center;
 }
 
-.test {
+.content-block {
     border: 1px solid black;
     height: 500px;
     width: 300px;
     margin-top: 25px;
     margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.content-title {
+    font-size: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.content-Image {
+    width: 300px;
+    height: 300px;
 }
 
 
