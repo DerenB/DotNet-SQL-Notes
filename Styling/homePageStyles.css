@@ -64,8 +64,10 @@
 .content-desc {
     display: flex;
     text-align: left;
+    flex-direction: column;
     background-color: white;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .content-desc p {
