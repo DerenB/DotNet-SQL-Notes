@@ -74,10 +74,12 @@
     display: block;
 }
 
-#banner {
-    width: 100%;
+/* Link to Top of Page */
+#top {
+    float: right;
 }
 
+/* Footer Styles*/
 .footer {
     display: flex;
     justify-content: center;

@@ -1,0 +1,12 @@
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+#banner-image {
+    width: 100%;
+    max-width: 2000px;
+}
