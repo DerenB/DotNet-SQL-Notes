@@ -63,17 +63,20 @@
 
 .content-desc {
     display: flex;
-    
-    font-size: 5px;
+    text-align: left;
+    background-color: white;
+    margin-bottom: 20px;
 }
 
 .content-desc p {
     justify-content: flex-start;
     font-size: 15px;
+    padding: 10px;
 }
 
 .content-button {
     background-color: red;
+    padding: 10px 20px 10px 20px;
 }
 
 
