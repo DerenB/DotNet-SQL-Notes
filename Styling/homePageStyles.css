@@ -20,6 +20,20 @@
     border-radius: 25px;
 }
 
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.test {
+    border: 1px solid black;
+    height: 500px;
+    width: 300px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 
 @media only screen and (max-width: 665px) {
     #banner {
