@@ -4,9 +4,11 @@
 }
 
 .navbar {
-    overflow: hidden;
     background-color: #333;
     font-family: Arial;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
   
 /* Links inside the navbar */
@@ -72,6 +74,10 @@
     display: block;
 }
 
+#banner {
+    width: 100%;
+}
+
 .footer {
     display: flex;
     justify-content: center;
@@ -81,5 +87,5 @@
 }
 
 .footer-item {
-    
+    color: white;
 }
