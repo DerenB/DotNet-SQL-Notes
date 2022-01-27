@@ -1,3 +1,7 @@
+html {
+    background-color: #2D112A;
+}
+
 #banner {
     display: flex;
     justify-content: center;
@@ -12,7 +16,7 @@
 }
 
 .break {
-    background-color: red;
+    background-color: #FF7E4A;
     height: 10px;
     width: 95%;
     margin-left: 2.5%;
@@ -29,7 +33,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: yellow;
     margin-top: 10px;
     width: 95%;
     margin-left: 2.5%;
@@ -37,7 +40,7 @@
 }
 
 .content-block {
-    border: 5px solid black;
+    border: 5px solid #7E0030;
     height: 500px;
     width: 300px;
     margin-top: 25px;
@@ -46,12 +49,16 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    background-color: #FFDCC8;
 }
 
 .content-title {
     font-size: 30px;
     margin-top: 5px;
     margin-bottom: 5px;
+    color: #2D112A;
+    background-color: #FFDCC8;
+    width: 100%;
 }
 
 .content-Image {
@@ -65,8 +72,7 @@
     display: flex;
     text-align: left;
     flex-direction: column;
-    background-color: white;
-    margin-bottom: 20px;
+    background-color: #FF7E4A;
     width: 100%;
 }
 
@@ -76,9 +82,25 @@
     padding: 10px;
 }
 
+.content-button-box {
+    background-color: #FF7E4A;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+}
+
 .content-button {
-    background-color: red;
+    color: #2D112A;
+    background-color: #EF4339;
     padding: 10px 20px 10px 20px;
+    border: #2D112A 3px solid;
+    border-radius: 25px;
+}
+
+.content-button:hover {
+    background-color: #7E0030;
+    border: black 3px solid;
+    color: #FFDCC8;
 }
 
 
