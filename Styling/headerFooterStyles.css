@@ -14,25 +14,29 @@
 /* Links inside the navbar */
 .navbar a {
     float: left;
-    font-size: 16px;
+    font-size: 30px;
     color: #2D112A;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: Forest, sans-serif;
 }
   
 /* The dropdown container */
 .dropdown {
     float: left;
     overflow: hidden;
+    font-size: 30px;
+    font-family: Forest, sans-serif;
 }
   
 /* Dropdown button */
 .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 30px;
     border: none;
     outline: none;
     color: #2D112A;
+    font-family: Forest, sans-serif;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
@@ -90,17 +94,16 @@
     justify-content: center;
     align-items: center;
     background-color: #7E0030;
-    height: 20px;
+    height: 25px;
 }
 
 .footer-item {
     color: #FF7E4A;
+    font-family: Forest, sans-serif;
+    font-size: 25px;
 }
 
 @media only screen and (max-width: 665px) {
-    body {
-        background-color: lightblue;
-    }
     .navbar {
         position: absolute;
         display: flex;

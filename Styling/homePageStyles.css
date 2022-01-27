@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Forest;
+    src: url('Fonts/Pine-Forest.otf');
+}
+
 html {
     background-color: #2D112A;
 }
@@ -53,12 +58,14 @@ html {
 }
 
 .content-title {
-    font-size: 30px;
+    font-size: 45px;
     margin-top: 5px;
     margin-bottom: 5px;
     color: #2D112A;
     background-color: #FFDCC8;
     width: 100%;
+    font-family: Forest, sans-serif;
+    max-height: 45px;
 }
 
 .content-Image {
