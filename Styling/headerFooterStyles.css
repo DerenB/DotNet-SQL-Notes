@@ -113,6 +113,7 @@
 
     #top {
         position: fixed;
-        background-color: #333;
+        background-color: #FFDCC8;
+        border: 2px solid #7E0030;
     }
 }
