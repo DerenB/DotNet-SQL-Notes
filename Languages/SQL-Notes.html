@@ -1,83 +1,161 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SQL Notes</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../Styling/styles.css">
-    </head>
-    <body>
-        <div class="pageTitle">
-            <h1>Notes on SQL</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Notes</title>
+
+    <link rel="stylesheet" href="../Styling/headerFooterStyles.css">
+    <link rel="stylesheet" href="../Styling/language-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#banner-image" id="top">Top</a>
+        <a href="../index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">School &#8671; </button>
+            <div class="dropdown-content">
+                <a href="../Classes/525-Notes.html">525 Notes</a>
+                <a href="../Classes/557-Notes.html">557 Notes</a>
+            </div>
         </div>
-
-        <div class="sectionNote first">
-            <h2 class="sectionHeader">Creating, Deleting, Using</h2>
-            <p><strong>MYSQL-CTL CLI;</strong> - Start the CLI</p>
-            <p><strong>SHOW DATABASES;</strong> - Lists available databases</p>
-    
-            <p><strong>CREATE DATABASE &#60name&#62</strong> - General Command for creating a database</p>
-            <p><strong>DROP &#60name&#62</strong> - Deletes a database</p>
-    
-            <p><strong>USE &#60name&#62</strong> - Select database to use</p>
-            <p><strong>SELECT &#60name&#62</strong> - Select database to use</p>
-            <p><strong>SELECT * FROM &#60tableName&#62</strong>Select all fields</p>
+        <div class="dropdown">
+            <button class="dropbtn">Languages &#8671; </button>
+            <div class="dropdown-content">
+                <a href="DotNet-Notes.html">Dotnet / C#</a>
+                <a href="Javascript-Notes.html">Javascript</a>
+                <a href="html-Notes.html">HTML</a>
+                <a href="SQL-Notes.html">SQL</a>
+            </div>
         </div>
-
-        <div class="sectionNote">
-            <h2 class="sectionHeader">Tables</h2>
-            <p><strong>CREATE TABLE &#60tablename&#62</strong></p>
-            <p class="tabSpace">&#60column_name&#62 &#60data_type&#62,</p>
-            <p class="tabSpace">&#60column_name&#62 &#60data_type&#62</p>
-            <p>);</p>
-            <p>Repeat as many times as needed</p>
-
-            <p><strong>Create Table Example:</strong></p>
-            <p>CREATE TABLE cats (</p>
-            <p class="tabSpace">name VARCHAR(100),</p>
-            <p class="tabSpace">age INT</p>
-            <p>);</p>
-
-            <p><strong>SHOW TABLES;</strong> - Shows the created tables</p>
-            <p><strong>SHOW COLUMNS FROM &#60tablename&#62</strong> - Shows the table columns</p>
-            <p><strong>DESC &#60tablename&#62</strong> - Shorthand to show the table columns</p>
-            <p><strong>DROP TABLE &#60tableName&#62</strong> - Deletes a table</p>
+        <div class="dropdown">
+            <button class="dropbtn">Web Dev &#8671; </button>
+            <div class="dropdown-content">
+                <a target="_blank" href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>
+                <a target="_blank" href="https://colorpalettes.net/">Color Palettes</a>
+                <a target="_blank" href="https://color.adobe.com/create/image">Adobe Color</a>
+                <a target="_blank" href="https://validator.w3.org/">HTML Validation</a>
+                <a target="_blank" href="https://www.netlify.com/">Netlify</a>
+            </div>
         </div>
-
-        <div class="sectionNote">
-            <h2 class="sectionHeader">Inserting / Adding Data to Table</h2>
-            <p><strong>INSERT INTO &#60tablename&#62 (variablename1, variablename2) VALUES (value1, value2)</strong> - Insert two values</p>
-            <p>Order of variables doesn't matter. Just have to match variable name to value</p>
-            <p>To insert multiple values, separate the groups with a comma. Ex:</p>
-            <p><strong>INSERT INTO cats(name,age) VALUES ('Peanut', 2), ('Butter', 4);</strong></p>
-    
-            <br>
-            <p><strong>SELECT * FROM &#60tablename&#62;</strong> - Shows the values in the table</p>
-    
-            <br>
-            <p><strong>&#60varName&#62 &#60varType&#62 DEFAULT &#60varVALUE&#62 ;</strong> - Add a default value to variable </p>
-            <p>Example for default:</p>
-            <p><strong>name VARCHAR(20) DEFAULT 'no name provided'</strong> - String with a default value</p>
-            <p><strong>&#60varName&#62 &#60varType&#62 NOT NULL DEFAULT &#60varVALUE&#62 ;</strong> - Add a default value to variable and prevents NULL being entered</p>
-            <p><strong>name VARCHAR(20) NOT NULL DEFAULT 'unnamed'</strong> - String with a default value</p>
-        </div>        
-
-        <div class="sectionNote">
-            <h2 class="sectionHeader">Keys</h2>
-            <p>Primary Key: A Unique key for each database item, determined by the specified variable.</p>
-            <p><strong>PRIMARY KEY (&#60varName&#62)</strong></p>
-            <p>Example: <strong>CREATE TABLE unique_cats (cat_id INT NOT NULL, age INT, PRIMARY KEY (catd_id));</strong></p>
-    
-            <p>The next ID in the system can be automatically incremented</p>
-            <p><strong>AUTO_INCREMENT</strong> - Add to key</p>
-            <p>Example: <strong>CREATE TABLE unique_cats (cat_id INT NOT NULL AUTO_INCREMENT, age INT, PRIMARY KEY (catd_id));</strong></p>
+        <div class="dropdown">
+            <button class="dropbtn">Dotnet &#8671; </button>
+            <div class="dropdown-content">
+                <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/">.Net Documentation</a>
+                <a target="_blank" href="https://www.c-sharpcorner.com/article/create-asp-net-core-web-application-with-visual-studio-code/">Create ASP.NET Web App</a>
+            </div>
         </div>
+        <div id="page-title">
+            SQL Notes
+        </div>
+    </div>
 
-        <div class="sectionNote">
-            <h2 class="sectionHeader">SQL Data Types</h2>
-            <h4>Numeric Types</h4>
+    <div id="banner">
+        <img id="banner-image" src="../Styling/Language-Images/red-house.png" />
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">Table of Contents</h1>
+        <div class="section-container">
+            <h2 class="container-header">Flexbox Creation</h2>
+            <ul>
+                <li>Mainly used for the spacing between items and their position within the container</li>
+                <li>display: flex;</li>
+                <ul>
+                    <li>Sets a class up as a flex container</li>
+                </ul>
+                <li>flex-wrap: wrap;</li>
+                <ul>
+                    <li>Wraps the container as the window changes size</li>
+                    <ul>
+                        <li>fsdfsdfsd</li>
+                    </ul>
+                </ul>
+                <li>flex-direction: column;</li>
+                <ul>
+                    <li>Makes the flex container into a column</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">Tables</h1>
+        <div class="section-container">
+            <h2 class="container-header">Create Table</h2>
+            <ul>
+                <li>CREATE TABLE &#60tablename&#62</li>
+                <ul>
+                    <p>&#60column_name&#62 &#60data_type&#62,</p>
+                    <p>&#60column_name&#62 &#60data_type&#62</p>
+                </ul>
+                <p>);</p>
+                <li>Repeat as many times as needed</li>
+                <li>Create Table Example:</li>
+
+                <li>CREATE TABLE cats</li>
+                <ul>
+                    <p>name VARCHAR(100),</p>
+                    <p>age INT</p>
+                </ul>
+                <p>);</p>
+                <li><strong>SHOW TABLES;</strong> - shows the created tables</li>
+                <li><strong>SHOW COLUMNS FROM &#60tablename&#62</strong> - Shows the table columns</li>
+                <li><strong>DESC &#60tablename&#62</strong> - Shorthand to show the table columns</li>
+                <li><strong>DROP TABLE &#60tableName&#62</strong> - Deletes a table</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Inserting / Adding Data to Table</h2>
+            <ul>
+                <li>Insert two values:</li>
+                <strong>INSERT INTO &#60tablename&#62 (variablename1, variablename2) VALUES (value1, value2)</strong>
+                <li>Order of variables doesn't matter. Just have to match variable name to value</li>
+                <li>To insert multiple values, separate the groups with a comma.</li>
+                <li>Example:</li>
+                <p><strong>INSERT INTO cats(name,age) VALUES ('Peanut', 2), ('Butter', 4);</strong></p>
+                <li>Shows the values in the table:</li>
+                <p><strong>SELECT * FROM &#60tablename&#62;</strong></p>
+
+                <li>Add a default value to variable:</li>
+                <p><strong>&#60varName&#62 &#60varType&#62 DEFAULT &#60varVALUE&#62 ;</strong></p>
+                <li>Example:</li>
+                <p><strong>name VARCHAR(20) DEFAULT 'no name provided'</strong> - String with a default value</p>
+                <li>Add a default value to variable and prevents NULL being entered:</li>
+                <p><strong>&#60varName&#62 &#60varType&#62 NOT NULL DEFAULT &#60varVALUE&#62 ;</strong></p>
+                <li>Example - String with a default value:</li>
+                <p><strong>name VARCHAR(20) NOT NULL DEFAULT 'unnamed'</strong></p>
+            </ul>
+            
+            
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">Keys</h1>
+        <div class="section-container">
+            <h2 class="container-header">Creating Keys</h2>
+            <ul>
+                <li>Primary Key: A Unique key for each database item, determined by the specified variable.</li>
+                <li><strong>PRIMARY KEY (&#60varName&#62)</strong></li>
+                <li>Example: </li>
+                <p><strong>CREATE TABLE unique_cats (cat_id INT NOT NULL, age INT, PRIMARY KEY (catd_id));</strong></p>
+                <li>The next ID in the system can be automatically incremented</li>
+                <li><strong>AUTO_INCREMENT</strong> - Add to key</li>
+                <li>Example: </li>
+                <p><strong>CREATE TABLE unique_cats (cat_id INT NOT NULL AUTO_INCREMENT, age INT, PRIMARY KEY (catd_id));</strong></p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">SQL Data Types</h1>
+        <div class="section-container">
+            <h2 class="container-header">Numeric Types</h2>
             <ul>
                 <li>INT</li>
                 <li>SMALLINT</li>
@@ -90,8 +168,9 @@
                 <li>DOUBLE</li>
                 <li>BIT</li>
             </ul>
-    
-            <h4>String Types</h4>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">String Types</h2>
             <ul>
                 <li>Char</li>
                 <li>VARCHAR - have to specify a specific length: varchar(100)</li>
@@ -107,8 +186,9 @@
                 <li>LONGTEXT</li>
                 <li>ENUM</li>
             </ul>
-            
-            <h4>Date Types</h4>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Date Types</h2>
             <ul>
                 <li>DATE</li>
                 <li>DATETIME</li>
@@ -117,8 +197,30 @@
                 <li>YEAR</li>
             </ul>
         </div>
-        
-        <br>
-        <script src="" async defer></script>
-    </body>
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">Template Header</h1>
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="color-palette">
+        <div class="color-palette-item" id="color-1">#54D5C2</div>
+        <div class="color-palette-item" id="color-2">#082626</div>
+        <div class="color-palette-item" id="color-3">#14594C</div>
+        <div class="color-palette-item" id="color-4">#85BF75</div>
+        <div class="color-palette-item" id="color-5">#D1F257</div>
+        <div class="color-palette-item" id="color-6">#F27979</div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-item">2022 - SQL Notes</div>
+    </footer>
+</body>
 </html>

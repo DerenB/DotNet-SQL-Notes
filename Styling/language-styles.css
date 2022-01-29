@@ -70,6 +70,9 @@ li {
     width: 150px;
     margin-top: 20px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #color-1 {
@@ -78,6 +81,7 @@ li {
 
 #color-2 {
     background-color: #082626;
+    color: white;
 }
 #color-3 {
     background-color: #14594C;  
@@ -134,6 +138,12 @@ li {
 
 #top:hover {
     color: #082626;
+}
+
+#page-title {
+    font-size: 15px;
+    color: #D1F257;
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 .footer {
