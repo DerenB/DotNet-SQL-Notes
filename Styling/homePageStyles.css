@@ -153,10 +153,16 @@ html {
 
 .navbar a {
     color: #2D112A;
+    font-family: Forest, sans-serif;
+}
+
+.dropdown {
+    font-family: Forest, sans-serif;
 }
 
 .dropdown .dropbtn {
     color: #2D112A;
+    font-family: Forest, sans-serif;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
@@ -186,6 +192,7 @@ html {
 
 .footer-item {
     color: #FF7E4A;
+    font-family: Forest, sans-serif;
 }
 
 @media only screen and (max-width: 665px) {
