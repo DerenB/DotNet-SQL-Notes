@@ -1,0 +1,162 @@
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid black;
+    background-color: #14594C;
+}
+
+#banner-image {
+    width: 100%;
+    max-width: 2000px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    background-color: #14594C;
+    padding-bottom: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    border-bottom: 5px solid black;
+}
+
+.section-header {
+    padding-left: 20px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    color: #082626;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 94%;
+    margin-top: 10px;
+    margin-left: 3%;
+    padding: 10px;
+    background-color: #85BF75;
+    border: 1px solid #D1F257;
+}
+
+.container-header {
+    text-transform: uppercase;
+    color: #082626;
+}
+
+ul {
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+li {
+    padding-top: 5px;
+}
+
+.color-palette {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: black;
+}
+
+.color-palette-item {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#color-1 {
+    background-color: #54D5C2;
+}
+
+#color-2 {
+    background-color: #082626;
+}
+#color-3 {
+    background-color: #14594C;  
+}
+#color-4 {
+    background-color: #85BF75;
+}
+#color-5 {
+    background-color: #D1F257;   
+}
+#color-6 {
+    background-color: #F27979;
+}
+
+
+/* NAVBAR & FOOTER COLORS */
+.navbar {
+    background-color: #082626;
+}
+
+.navbar a {
+    color: #D1F257;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+}
+
+.dropdown {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+}
+
+.dropdown .dropbtn {
+    color: #D1F257;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #F27979;
+    color: #082626;
+}
+
+.dropdown-content {
+    background-color: #54D5C2;
+}
+
+.dropdown-content a {
+    color: #082626;
+}
+
+#top {
+    color: #D1F257;
+}
+
+#top:hover {
+    color: #082626;
+}
+
+.footer {
+    background-color: #082626;
+}
+
+.footer-item {
+    color: #D1F257;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 665px) {
+    #top {
+        background-color: #082626;
+        border: 2px solid #54D5C2;
+    }
+
+    #banner {
+        margin-top: 230px;
+    }
+
+    .section-container {
+        width: 90%;
+    }
+}
