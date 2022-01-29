@@ -7,57 +7,158 @@
     <title>HTML Notes</title>
 </head>
 <body>
-    <div>
-        <p>Flexbox Creation</p>
-        <ul>
-            <li>Mainly used for the spacing between items and their position within the container</li>
-            <li>display: flex;</li>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Notes</title>
+
+    <link rel="stylesheet" href="../Styling/headerFooterStyles.css">
+    <link rel="stylesheet" href="../Styling/language-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#banner-image" id="top">Top</a>
+        <a href="../index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">School &#8671; </button>
+            <div class="dropdown-content">
+                <a href="../Classes/525-Notes.html">525 Notes</a>
+                <a href="../Classes/557-Notes.html">557 Notes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Languages &#8671; </button>
+            <div class="dropdown-content">
+                <a href="DotNet-Notes.html">Dotnet / C#</a>
+                <a href="Javascript-Notes.html">Javascript</a>
+                <a href="html-Notes.html">HTML</a>
+                <a href="SQL-Notes.html">SQL</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Web Dev &#8671; </button>
+            <div class="dropdown-content">
+                <a target="_blank" href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>
+                <a target="_blank" href="https://colorpalettes.net/">Color Palettes</a>
+                <a target="_blank" href="https://color.adobe.com/create/image">Adobe Color</a>
+                <a target="_blank" href="https://validator.w3.org/">HTML Validation</a>
+                <a target="_blank" href="https://www.netlify.com/">Netlify</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Dotnet &#8671; </button>
+            <div class="dropdown-content">
+                <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/">.Net Documentation</a>
+                <a target="_blank" href="https://www.c-sharpcorner.com/article/create-asp-net-core-web-application-with-visual-studio-code/">Create ASP.NET Web App</a>
+            </div>
+        </div>
+        <div id="page-title">
+            HTML Notes
+        </div>
+    </div>
+
+    <div id="banner">
+        <img id="banner-image" src="../Styling/Language-Images/red-house.png" />
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">Table of Contents</h1>
+        <div class="section-container">
             <ul>
-                <li>Sets a class up as a flex container</li>
+                <li><a href="#flexbox">Flexbox</a></li>
+                <ul>
+                    <li>Flexbox Creation</li>
+                    <li>Justify-Content</li>
+                    <li>Align-Items</li>
+                    <li>Align-Content</li>
+                    <li>Flex Details</li>
+                </ul>
             </ul>
-            <li>flex-wrap: wrap;</li>
+        </div>
+    </div>
+
+    <div class="section" id="flexbox">
+        <h1 class="section-header">Flexbox</h1>
+        <div class="section-container">
+            <h2 class="container-header">Flexbox Creation</h2>
             <ul>
-                <li>Wraps the container as the window changes size</li>
+                <li>Mainly used for the spacing between items and their position within the container</li>
+                <li><strong>display: flex;</strong></li>
+                <ul>
+                    <li>Sets a class up as a flex container</li>
+                </ul>
+                <li><strong>flex-wrap: wrap;</strong></li>
+                <ul>
+                    <li>Wraps the container as the window changes size</li>
+                </ul>
+                <li><strong>flex-direction: column;</strong></li>
+                <ul>
+                    <li>Makes the flex container into a column</li>
+                </ul>
             </ul>
-            <li>flex-direction: column;</li>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Justify-Content</h2>
             <ul>
-                <li>Makes the flex container into a column</li>
+                <li>(default) flex-start - left horizontal align</li>
+                <li>center - center horizontally</li>
+                <li>flex-end - right horizontal align</li>
+                <li>space-between - extra space inbetween items</li>
+                <li>space-around - even amount of space around all objects</li>
             </ul>
-        </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Align-Items</h2>
+            <ul>
+                <li>(default) stretch - fill the most amount of space vertically</li>
+                <li>flex-start - align to top vertically, uses item height</li>
+                <li>center - centers vertically</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Align-Content</h2>
+            <ul>
+                <li>Only used for multi-line content</li>
+                <li>center - how much space to put between the lines</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Flex Details</h2>
+            <ul>
+                <li>Format: "flex: flex-grow flex-shrink flex-basis"</li>
+                <li>Default values are "flex: 0 1 0%"</li>
+                <li>flex-grow takes a single digit, makes item grow n-times faster</li>
+            </ul>
+        </div>
     </div>
-    <div>
-        <p>justify-content: </p>
-        <ul>
-            <li>(default) flex-start - left horizontal align</li>
-            <li>center - center horizontally</li>
-            <li>flex-end - right horizontal align</li>
-            <li>space-between - extra space inbetween items</li>
-            <li>space-around - even amount of space around all objects</li>
-        </ul>
+
+    <div class="section">
+        <h1 class="section-header">Template Header</h1>
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
+
+        </div>
     </div>
-    <div>
-        <p>align-items: </p>
-        <ul>
-            <li>(default) stretch - fill the most amount of space vertically</li>
-            <li>flex-start - align to top vertically, uses item height</li>
-            <li>center - centers vertically</li>
-            <li></li>
-        </ul>
+
+    <div class="color-palette">
+        <div class="color-palette-item" id="color-1">#54D5C2</div>
+        <div class="color-palette-item" id="color-2">#082626</div>
+        <div class="color-palette-item" id="color-3">#14594C</div>
+        <div class="color-palette-item" id="color-4">#85BF75</div>
+        <div class="color-palette-item" id="color-5">#D1F257</div>
+        <div class="color-palette-item" id="color-6">#F27979</div>
     </div>
-    <div>
-        <p>align-content: </p>
-        <ul>
-            <li>Only used for multi-line content</li>
-            <li>center - how much space to put between the lines</li>
-        </ul>
-    </div>
-    <div>
-        <p>Flex Details</p>
-        <ul>
-            <li>Format: "flex: flex-grow flex-shrink flex-basis"</li>
-            <li>Default values are "flex: 0 1 0%"</li>
-            <li>flex-grow takes a single digit, makes item grow n-times faster</li>
-        </ul>
-    </div>
+
+    <footer class="footer">
+        <div class="footer-item">2022 - HTML Notes</div>
+    </footer>
 </body>
 </html>
