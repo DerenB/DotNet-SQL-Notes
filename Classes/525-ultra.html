@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>525 Notes</title>
+
+    <link rel="stylesheet" href="../Styling/headerFooterStyles.css">
+    <link rel="stylesheet" href="../Styling/class-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#banner-image" id="top">Top</a>
+        <a href="../index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">School &#8671; </button>
+            <div class="dropdown-content">
+                <a href="525-ultra.html">525 Notes</a>
+                <a href="557-Notes.html">557 Notes</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Languages &#8671; </button>
+            <div class="dropdown-content">
+                <a href="../Languages/DotNet-Notes.html">Dotnet / C#</a>
+                <a href="../Languages/Javascript-Notes.html">Javascript</a>
+                <a href="../Languages/html-Notes.html">HTML</a>
+                <a href="../Languages/SQL-Notes.html">SQL</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Web Dev &#8671; </button>
+            <div class="dropdown-content">
+                <a target="_blank" href="https://developer.mozilla.org/en-US/">MDN Web Docs</a>
+                <a target="_blank" href="https://colorpalettes.net/">Color Palettes</a>
+                <a target="_blank" href="https://color.adobe.com/create/image">Adobe Color</a>
+                <a target="_blank" href="https://validator.w3.org/">HTML Validation</a>
+                <a target="_blank" href="https://www.netlify.com/">Netlify</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Dotnet &#8671; </button>
+            <div class="dropdown-content">
+                <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/">.Net Documentation</a>
+                <a target="_blank" href="https://www.c-sharpcorner.com/article/create-asp-net-core-web-application-with-visual-studio-code/">Create ASP.NET Web App</a>
+            </div>
+        </div>
+        <div id="page-title">
+            525 Notes
+        </div>
+    </div>
+
+    <div id="banner">
+        <img id="banner-image" src="../Styling/class-images/sea-of-thieves.jpg" />
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">Table of Contents</h1>
+        <div class="section-container">
+            <ul>
+                <li><a href="#tables">Tables</a></li>
+                <ul>
+                    <li>Create tables</li>
+                    <li>Inserting / Adding Data to Table</li>
+                </ul>
+                <li><a href="#keys">Keys</a></li>
+                <li><a href="#data">SQL Data Types</a></li>
+                <ul>
+                    <li>Numeric Types</li>
+                    <li>String Types</li>
+                    <li>Date Types</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="tables">
+        <h1 class="section-header">Tables</h1>
+        <div class="section-container">
+            <h2 class="container-header">Create Table</h2>
+            <ul>
+                <li>CREATE TABLE &#60tablename&#62</li>
+                <ul>
+                    <p>&#60column_name&#62 &#60data_type&#62,</p>
+                    <p>&#60column_name&#62 &#60data_type&#62</p>
+                </ul>
+                <p>);</p>
+                <li>Repeat as many times as needed</li>
+                <li>Create Table Example:</li>
+
+                <li>CREATE TABLE cats</li>
+                <ul>
+                    <p>name VARCHAR(100),</p>
+                    <p>age INT</p>
+                </ul>
+                <p>);</p>
+                <li><strong>SHOW TABLES;</strong> - shows the created tables</li>
+                <li><strong>SHOW COLUMNS FROM &#60tablename&#62</strong> - Shows the table columns</li>
+                <li><strong>DESC &#60tablename&#62</strong> - Shorthand to show the table columns</li>
+                <li><strong>DROP TABLE &#60tableName&#62</strong> - Deletes a table</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Inserting / Adding Data to Table</h2>
+            <ul>
+                <li>Insert two values:</li>
+                <strong>INSERT INTO &#60tablename&#62 (variablename1, variablename2) VALUES (value1, value2)</strong>
+                <li>Order of variables doesn't matter. Just have to match variable name to value</li>
+                <li>To insert multiple values, separate the groups with a comma.</li>
+                <li>Example:</li>
+                <p><strong>INSERT INTO cats(name,age) VALUES ('Peanut', 2), ('Butter', 4);</strong></p>
+                <li>Shows the values in the table:</li>
+                <p><strong>SELECT * FROM &#60tablename&#62;</strong></p>
+
+                <li>Add a default value to variable:</li>
+                <p><strong>&#60varName&#62 &#60varType&#62 DEFAULT &#60varVALUE&#62 ;</strong></p>
+                <li>Example:</li>
+                <p><strong>name VARCHAR(20) DEFAULT 'no name provided'</strong> - String with a default value</p>
+                <li>Add a default value to variable and prevents NULL being entered:</li>
+                <p><strong>&#60varName&#62 &#60varType&#62 NOT NULL DEFAULT &#60varVALUE&#62 ;</strong></p>
+                <li>Example - String with a default value:</li>
+                <p><strong>name VARCHAR(20) NOT NULL DEFAULT 'unnamed'</strong></p>
+            </ul>
+            
+            
+        </div>
+    </div>
+
+    <div class="section" id="keys">
+        <h1 class="section-header">Keys</h1>
+        <div class="section-container">
+            <h2 class="container-header">Creating Keys</h2>
+            <ul>
+                <li>Primary Key: A Unique key for each database item, determined by the specified variable.</li>
+                <li><strong>PRIMARY KEY (&#60varName&#62)</strong></li>
+                <li>Example: </li>
+                <p><strong>CREATE TABLE unique_cats (cat_id INT NOT NULL, age INT, PRIMARY KEY (catd_id));</strong></p>
+                <li>The next ID in the system can be automatically incremented</li>
+                <li><strong>AUTO_INCREMENT</strong> - Add to key</li>
+                <li>Example: </li>
+                <p><strong>CREATE TABLE unique_cats (cat_id INT NOT NULL AUTO_INCREMENT, age INT, PRIMARY KEY (catd_id));</strong></p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="data">
+        <h1 class="section-header">SQL Data Types</h1>
+        <div class="section-container">
+            <h2 class="container-header">Numeric Types</h2>
+            <ul>
+                <li>INT</li>
+                <li>SMALLINT</li>
+                <li>TINYINT</li>
+                <li>MEDIUMINT</li>
+                <li>BIGINT</li>
+                <li>DECIMAL</li>
+                <li>NUMERIC</li>
+                <li>FLOAT</li>
+                <li>DOUBLE</li>
+                <li>BIT</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">String Types</h2>
+            <ul>
+                <li>Char</li>
+                <li>VARCHAR - have to specify a specific length: varchar(100)</li>
+                <li>BINARY</li>
+                <li>VARBINARY</li>
+                <li>BLOB</li>
+                <li>TINYBLOB</li>
+                <li>MEDIUMBLOB</li>
+                <li>LONGBLOB</li>
+                <li>TEXT</li>
+                <li>TINYTEXT</li>
+                <li>MEDIUMTEXT</li>
+                <li>LONGTEXT</li>
+                <li>ENUM</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Date Types</h2>
+            <ul>
+                <li>DATE</li>
+                <li>DATETIME</li>
+                <li>TIMESTAMP</li>
+                <li>TIME</li>
+                <li>YEAR</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">Template Header</h1>
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="color-palette">
+        <div class="color-palette-item" id="color-1">#243139</div>
+        <div class="color-palette-item" id="color-2">#455E62</div>
+        <div class="color-palette-item" id="color-3">#91BAA3</div>
+        <div class="color-palette-item" id="color-4">#FDE8B1</div>
+        <div class="color-palette-item" id="color-5">#EBB586</div>
+        <div class="color-palette-item" id="color-6">#664649</div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-item">2022 Winter - 525 Notes</div>
+    </footer>
+</body>
+</html>
