@@ -66,44 +66,154 @@
         <h1 class="section-header">Table of Contents</h1>
         <div class="section-container">
             <ul>
-                <li><a href="#tables">Tables</a></li>
+                <li><a href="#folderItems">Folder Items</a></li>
+                <li><a href="#creating">Creating & Building a Project</a></li>
+                <li><a href="#writing">Writing C# Within HTMl File</a></li>
+                <li><a href="#section-details">Section Details</a></li>
                 <ul>
-                    <li>Create tables</li>
-                    <li>Inserting / Adding Data to Table</li>
-                </ul>
-                <li><a href="#keys">Keys</a></li>
-                <li><a href="#data">SQL Data Types</a></li>
-                <ul>
-                    <li>Numeric Types</li>
-                    <li>String Types</li>
-                    <li>Date Types</li>
+                    <li>Pages Details</li>
+                    <li>Layout cshtml Details</li>
+                    <li>Index.cshtml Details</li>
+                    <li>wwwRoot Folder Details</li>
                 </ul>
             </ul>
         </div>
     </div>
 
-    <div class="section">
-        <h1 class="section-header">Template Header</h1>
+    <div class="section" id="folderItems">
+        <h1 class="section-header">Folder Items</h1>
         <div class="section-container">
-            <h2 class="container-header">Template Section Header</h2>
-
+            <ul>
+                <li><strong>Dependencies</strong> - Contains the framework and packages that are required for the application to run.</li>
+                <li><strong>Pages</strong> - <a href="#pageDetails">Details</a></li>
+                <ul>
+                    <li>Contains all the pages required for the project. Has two files:</li>
+                </ul>
+                <li><strong>Properties</strong> - Settings and definitions that are going to be used when running the app</li>
+                <li><strong>wwwroot</strong> - <a href="#rootDetails">Details</a></li>
+                <ul>
+                    <li>Contains all of the static files. Store HTML, CSS, JS, files here.</li>
+                    <li>Cannot store C# or Razor files here.</li>
+                </ul>
+                <li>appsettings.json</strong> - Loads appsettings.json in production, loads appsettings.developer.json in development</li>
+                <li><strong>program.cs</strong> - Contains the entry point for the program. The Main Method is the first method which gets invoked.</li>
+                <li><strong>startup.cs</strong> - Contains the startup class.</li>
+            </ul>
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="creating">
+        <h1 class="section-header">Creating & Building a Project</h1>
+        <div class="section-container">
+            <ul>
+                <li>ASP.NET Core Web Application - Umbrella core application that can be expanded</li>
+                <li>Web Application - Uses Razor pages, can use MVC pages. Uses Razor pages as a default</li>
+                <li>Web Application (Model-View-Controller) - Uses MVC, can use Razor pages</li>
+                <li>Always check "Configure for HTTPS".</li>
+                <li>IIS Express - Internet Information Server.</li>
+                <li>RazorPagesUI - Uses Kestrel, a command line web server.</li>
+                <li><strong>Individual Page Items</strong></li>
+                <ul>
+                    <li><strong>@page</strong> - Must be first line of file</li>
+                    <ul>
+                        <li>Indicates that the file is a Razor page</li>
+                    </ul>
+                    <li><strong>@model ModelName</strong> - Connects cshtml file to cshtml.cs file</li>
+                    <li><strong>Page Layout</strong></li>
+                    <ul>
+                        <li>Used to have one set layout across all pages. Header, Footer, etc.</li>
+                        <li><strong>_ViewStart.cshtml</strong> in Pages is the default location</li>
+                    </ul>
+                </ul>
+            </ul> 
+        </div>
+    </div>
+
+    <div class="section" id="writing">
+        <h1 class="section-header">Writing C# within HTML file</h1>
+        <div class="section-container">
+            <ul>
+                <li>C# expressions have to start with @</li>
+                <ul>
+                    <li><strong>Ex: </strong>&#60;h1&#62; @DateTime.Now.ToShortDateString() &#60;/h1&#62;</li>
+                </ul>
+                <li>C# expressions with spaces have to be surrounded with parentheses</li>
+                <ul>
+                    <li><strong>Ex: </strong> &#60;p&#62; Last week this time: @(DateTime.Now - TimeSpan.FromDays(7)) &#60;/p&#62;</li>
+                </ul>
+                <li>Can surround multi-line code with brackets - { }</li>
+                <li>If statement just needs one "@" at the IF. The else and else if do not need it.</li>
+                <li>Switch statements are the same as IF statements, just one @</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section" id="section-details">
         <h1 class="section-header">Section Details</h1>
         <div class="section-container">
             <h2 class="container-header">Pages Details</h2>
-
+            <ul>
+                <li>Path to different webpage based on the relation to the Pages folder</li>
+                <li>Ex: localhost/Forms/AddAddress</li>
+                <li><strong>Add Page</strong> - Right click > Add > Razor Page</li>
+                <li><strong>- Shared Folder:</strong></li>
+                <ul>
+                    <li><strong>_Layout.cshtml</strong> - The actual html page. <a href="#layoutDetails">Details</a></li>
+                </ul>
+                <li><strong>_ViewImports.cshtml</strong>- Pages to help to get started in Razor pages.</li>
+                <li><strong>_ViewStart.cshtml</strong>- Pages to help to get started in Razor pages.</li>
+                <li><strong>Index.cshtml</strong> - contains razor syntax, which is a combination of HTML markup and C#</li>
+                <ul>
+                    <li><strong>Index.cshtml.cs</strong> - contains the logic and behaivor for each page</li>
+                </ul>
+                <li><strong>Three pages are template pages:</strong></li>
+                <ul>
+                    <li><strong>Error.cshtml</strong></li>
+                    <li><strong>Index.cshtml</strong> - Website starting page. <a href="#indexDetails">Details</a></li>
+                    <li><strong>Privacy.cshtml</strong></li>
+                </ul>
+            </ul>
         </div>
+
         <div class="section-container">
             <h2 class="container-header">Layout cshtml Details</h2>
+            <ul>
+                <li>Found in Pages  >  Shared  >  _Layout.cshtml</li>
+                <li>The line "@RenderBody()" injects the Razor page, the Index.cshtml page, into the HTML.</li>
+                <li>Can make changes to the overall HTML page here in _Layout.cshtml</li>
+                <li>Can add additional style sheet references to the page.</li>
+            </ul>
 
         </div>
+
         <div class="section-container">
             <h2 class="container-header">Index.cshtml Details</h2>
-
+            <ul>
+                <li>index.cshtml is the dotnet starting point</li>
+                <ul>
+                    <li>Industry standard is to call it Index</li>
+                </ul>
+                <li>"@page" indicates it as a Razor page</li>
+                <ul>
+                    <li>Indicates the Razor syntax, C# code</li>
+                </ul>
+                <li>"@model IndexModel" - the data that is associated with this page</li>
+                <ul>
+                    <li>PageModel is at Index.cshtml.cs</li>
+                    <li>Will typically only have one model</li>
+                    <li>Part of the PageModel</li>
+                </ul>
+                <li>ViewData["Title"] = "Home page" - changes the Title property</li>
+                <li><strong>Index.cshtml.cs</strong> Details:</li>
+                <ul>
+                    <li>C# class, has a constructor that takes in a logger</li>
+                    <li>OnGet() Method - is what renders the Index page, is what runs when the Index page is created</li>
+                    <li>OnPost() Method - runs whenever data is posted to the page</li>
+                    <li>OnPost is not always included, only when information needs to be read in</li>
+                </ul>
+            </ul>
         </div>
+
         <div class="section-container">
             <h2 class="container-header">wwwRoot Folder Details</h2>
             <ul>
@@ -111,6 +221,14 @@
                 <li>Uses Bootstrap version 4.xx</li>
                 <li>Should stay on version of Bootstrap initially provided.</li>
             </ul>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">Template Header</h1>
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
 
         </div>
     </div>
