@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DotNet Notes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../Styling/styles.css">
+</head>
+<body>
+    <div class="pageTitle">
+        <table id="header">
+            <tr>
+                <td><a href="#top">Top</a></td>
+                <td><h1>Notes on DotNet</h1></td>
+                <td><a href="https://www.google.com/" target="_blank">Google</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="sectionNote">
+        <h2 class="sectionHeader">Table of Contents</h2>
+        <p><a href="#folderItem">Folder Items</a></p>
+        <p><a href="#buildingProject">Creating and Building a Project</a></p>
+        <p><a href="#writingCS">Writing C# within HTML file</a></p>
+        <p><a href="#pageDetails">Page Details</a></p>
+        <p><a href="#layoutDetails">Layout cshtml Details</a></p>
+        <p><a href="#indexDetails">Index.cshtml Details</a></p>
+        <p><a href="#rootDetails">wwwRoot Folder Details</a></p>
+
+
+        <div>
+            <p> </p>
+            <p class="oneSpace"> </p>
+            <p class="twoSpace"> </p>
+            <p class="threeSpace"> </p>
+            <p class="fourSpace"> </p>
+
+            <p><a href="#"></a> </p>
+            <p class="oneSpace"><a href="#"></a> </p>
+            <p class="twoSpace"><a href="#"></a> </p>
+            <p class="threeSpace"><a href="#"></a> </p>
+            <p class="fourSpace"><a href="#"></a> </p>
+        </div>
+    </div>
+
+    <div class="sectionNote" id="folderItem">
+        <h2 class="sectionHeader">Folder Items</h2>
+        <p><strong>- Dependencies</strong> - Contains the framework and packages that are required for the application to run.</p>
+
+        <p><strong>- Pages</strong> - <a href="#pageDetails">Details</a></p>
+        <p class="oneSpace">- Contains all the pages required for the project. Has two files:</p>
+
+        <p><strong>- Properties</strong> - Settings and definitions that are going to be used when running the app</p>
+
+        <p><strong>- wwwroot</strong> - <a href="#rootDetails">Details</a></p>
+        <p class="oneSpace">- Contains all of the static files. Store HTML, CSS, JS, files here.</p>
+        <p class="oneSpace">- Cannot store C# or Razor files here.</p>
+        <p><strong>- appsettings.json</strong> - Loads appsettings.json in production, loads appsettings.developer.json in development</p>
+        <p><strong>- program.cs</strong> - Contains the entry point for the program. The Main Method is the first method which gets invoked.</p>
+        <p><strong>- startup.cs</strong> - Contains the startup class.</p>
+    </div>  
+    
+    <div class="sectionNote" id="buildingProject">
+        <h2 class="sectionHeader">Creating and Building a Project</h2>
+        <p>- ASP.NET Core Web Application - Umbrella core application that can be expanded</p>
+        <p>- Web Application - Uses Razor pages, can use MVC pages. Uses Razor pages as a default</p> 
+        <p>- Web Application (Model-View-Controller) - Uses MVC, can use Razor pages</p>
+        <p>- Always check "Configure for HTTPS".</p> 
+        <p>- IIS Express - Internet Information Server. </p>
+        <p>- RazorPagesUI - Uses Kestrel, a command line web server.</p>
+
+        <p><strong>- Individual Page Items</strong></p>
+        <p class="oneSpace">- <strong>@page</strong> - Must be first line of file</p>
+        <p class="twoSpace">- Indicates that the file is a Razor page </p>
+        <p class="oneSpace">- <strong>@model ModelName</strong> - Connects cshtml file to cshtml.cs file</p>
+        <p class="oneSpace">- <strong>Page Layout</strong> </p>
+        <p class="twoSpace">- Used to have one set layout across all pages. Header, Footer, etc.</p>
+        <p class="twoSpace">- <strong>_ViewStart.cshtml</strong> in Pages is the default location</p>
+        <p class="twoSpace"> </p>
+        <p class="twoSpace"> </p>
+
+        <div>
+            <p> </p>
+            <p class="oneSpace"> </p>
+            <p class="twoSpace"> </p>
+            <p class="threeSpace"> </p>
+            <p class="fourSpace"> </p>
+
+            <p><strong></strong></p>
+            <p class="oneSpace"><strong> </strong> </p>
+            <p class="twoSpace"><strong> </strong> </p>
+            <p class="threeSpace"><strong> </strong> </p>
+            <p class="fourSpace"><strong> </strong> </p>
+        </div>
+    </div>
+
+    <div class="sectionNote" id="writingCS">
+        <h2 class="sectionHeader">Writing C# within HTML file</h2>
+        <p>- C# expressions have to start with @ </p>
+        <p class="oneSpace"><strong>- Ex: </strong> &#60;h1&#62; @DateTime.Now.ToShortDateString() &#60;/h1&#62;</p>
+        <p>- C# expressions with spaces have to be surrounded with parentheses </p>
+        <p class="oneSpace"><strong>- Ex: </strong> &#60;p&#62; Last week this time: @(DateTime.Now - TimeSpan.FromDays(7)) &#60;/p&#62;</p>
+        <p>- Can surround multi-line code with brackets - { } </p>
+        <p>- If statement just needs one "@" at the IF. The else and else if do not need it.</p>
+        <p>- Switch statements are the same as IF statements, just one @</p>
+
+        <div>
+            <p> </p>
+            <p class="oneSpace"> </p>
+            <p class="twoSpace"> </p>
+            <p class="threeSpace"> </p>
+            <p class="fourSpace"> </p>
+
+            <p><strong></strong></p>
+            <p class="oneSpace"><strong> </strong> </p>
+            <p class="twoSpace"><strong> </strong> </p>
+            <p class="threeSpace"><strong> </strong> </p>
+            <p class="fourSpace"><strong> </strong> </p>
+        </div>
+    </div>
+
+    <div class="sectionNote" id="pageDetails">
+        <h2 class="sectionHeader">Pages Details</h2>
+        <p>- Path to different webpage based on the relation to the Pages folder</p>
+        <p class="oneSpace">- Ex: localhost/Forms/AddAddress</p>
+        <p><strong>- Add Page</strong> - Right click > Add > Razor Page</p>
+
+        <p class=""><strong>- Shared Folder:</strong></p>
+        <p class="oneSpace"><strong>-- _Layout.cshtml</strong> - The actual html page. <a href="#layoutDetails">Details</a></p>
+        <p class=""><strong>- _ViewImports.cshtml</strong>- Pages to help to get started in Razor pages.</p>
+        <p class=""><strong>- _ViewStart.cshtml</strong>- Pages to help to get started in Razor pages.</p>
+        <p class=""><strong>- Index.cshtml</strong> - contains razor syntax, which is a combination of HTML markup and C#</p>
+        <p class="oneSpace"><strong>-- Index.cshtml.cs</strong> - contains the logic and behaivor for each page</p>
+        
+        <p class=""><strong>- Three pages are template pages:</strong></p>
+        <p class="oneSpace"><strong>-- Error.cshtml</strong>- </p>
+        <p class="oneSpace"><strong>-- Index.cshtml</strong> - Website starting page. <a href="#indexDetails">Details</a></p>
+        <p class="oneSpace"><strong>-- Privacy.cshtml</strong></p>
+    </div>
+
+    <div class="sectionNote" id="layoutDetails">
+        <h2 class="sectionHeader">Layout cshtml Details</h2>
+        <p>- Found in Pages  >  Shared  >  _Layout.cshtml</p>
+        <p>- The line "@RenderBody()" injects the Razor page, the Index.cshtml page, into the HTML.</p>
+        <p>- Can make changes to the overall HTML page here in _Layout.cshtml</p>
+        <p>- Can add additional style sheet references to the page.</p>
+    </div>
+
+    <div class="sectionNote" id="indexDetails">
+        <h2 class="sectionHeader">Index.cshtml Details</h2>
+        <p>- index.cshtml is the dotnet starting point</p>
+        <p class="oneSpace">- Industry standard is to call it Index</p>
+        <p>- "@page" indicates it as a Razor page</p>
+        <p class="oneSpace">Indicates the Razor syntax, C# code</p>
+        <p>- "@model IndexModel" - the data that is associated with this page</p>
+        <p class="oneSpace">- PageModel is at Index.cshtml.cs</p>
+        <p class="oneSpace">- Will typically only have one model</p>
+        <p class="oneSpace">- Part of the PageModel</p>
+        <p>- ViewData["Title"] = "Home page" - changes the Title property</p>
+        <p><strong>- Index.cshtml.cs</strong> Details:</p>
+        <p class="oneSpace">- C# class, has a constructor that takes in a logger</p>
+        <p class="oneSpace">- OnGet() Method - is what renders the Index page, is what runs when the Index page is created</p>
+        <p class="oneSpace">- OnPost() Method - runs whenever data is posted to the page</p>
+        <p class="twoSpace">-- OnPost is not always included, only when information needs to be read in</p>
+    </div>
+
+    <script src="" async defer></script>
+</body>
+</html>
