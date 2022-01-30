@@ -60,16 +60,16 @@
 
 ul {
     padding-left: 20px;
-    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 ol {
     padding-left: 25px;
-    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 li {
-    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .image {

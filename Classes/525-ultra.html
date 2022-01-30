@@ -490,6 +490,209 @@
         </div>
     </div>
 
+    <div class="section">
+        <h1 class="section-header">01/24/22 Class Notes</h1>
+        <div class="section-container">
+            <h2 class="container-header">Background Services</h2>
+            <ul>
+                <li>Launch at boot time, some for system startup, then terminate. Some from system boot to shutdown.</li>
+                <li>Provide facilities like disk checking, process scheduling, error</li>
+                <li>Run in user context not kernel</li>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">OS Design and Implementation</h2>
+            <ul>
+                <li>Design and implementation of OS not "solvable", but some approaches have proven successful</li>
+                <li>Internal structure of different OS can vary. Start by defining goals and specifications</li>
+                <li><strong>User Goals </strong>- operating system should be convenient to use, easy to learn, reliable, sage, and fast</li>
+                <li><strong>System Goals </strong>- operating system should be easy to design, implement, and maintain, as well as flexible, reliable, error-free, efficient</li>
+                <li>Mechanisms determine how to do something, policies decide what will be done.</li>
+                <li>The seperation of policy from mechanism is a very important principle, it allows maximum flexibility if policy decisions are to be changed later</li>
+                <li>Variations:</li>
+                <ul>
+                    <li>Early OS in assembly language</li>
+                    <li>Then system programming languages like Algol, PL/1</li>
+                    <li>Now C, C++ </li>
+                </ul>
+                <li>Actually usually a mix of languages</li>
+                <ul>
+                    <li>Lowest levels in assembly</li>
+                    <li>Main body in C</li>
+                    <li>Systems programs in C, C++, scripting languages like PERL, Python, shell scripts</li>
+                </ul>
+                <li>More high level languages easier to port to other hardware but slower</li>
+                <li>Emulation can allow an OS to run on non-native hardware</li>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">OS Structure</h2>
+            <ul>
+                <li>General-purpose OS is very large program</li>
+                <li>Various ways to structure one as follows</li>
+                <li>MS-DOS written to provide the most functionality in the last space</li>
+                <ul>
+                    <li>Not divided into modules</li>
+                    <li>Although MS-DOS has some structure, its interfaces and levels of functionality are not well separated</li>
+                </ul>
+                <li><strong>UNIX</strong> - limited by hardware functionality, the original UNIX operating system had limited structuring. The UNIX OS consists of two separable parts</li>
+                <ul>
+                    <li><strong>System Porgrams </strong>- doing system level work as a standalone program</li>
+                    <li><strong>The Kernel </strong>- low level stuff. CPU scheduling, memory management</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">Microkernel System Structure</h2>
+            <ul>
+                <li>Moves as much from the kernel into user space</li>
+                <li>Mach example of microkernel. Mac OS X kernel (Darwin) partly based on Mach</li>
+                <li>Communication takes place between user modules using message passing</li>
+                <li>Benefits:</li>
+                <ul>
+                    <li>Easier to extend a microkernel</li>
+                    <li>Easier to port the operating system to new architectures</li>
+                    <li>More reliable (less code is running in kernel mode)</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">Modules</h2>
+            <ul>
+                <li>Most modern OS implement <strong>loadable kernel modules</strong></li>
+                <ul>
+                    <li>Uses object-oriented approach</li>
+                    <li>Each core component is separate</li>
+                    <li>Each talks to the others over known interfaces</li>
+                    <li>Each is loadable as needed within the kernel</li>
+                </ul>
+                <li>Overall, similar to layers but with more flexibility. Linux, Solaris, etc</li>
+                <li><strong>Hybrid Systems:</strong></li>
+                <ul>
+                    <li>Most modern operating systems actually not one pure model</li>
+                    <li>Apple Mac OS X hybrid, layered, Aqua UI plus Cocoa programming environment</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">Operating-System Debugging</h2>
+            <ul>
+                <li>Debugging is finding and fixing errors, or bugs</li>
+                <li>OS's generate log files containing error information</li>
+                <li>Failure of an application can generate <strong>core dump</strong> file capturing memory of the process</li>
+                <li>Operating system failure can generate <strong>crash dump</strong> files containing kernel memory</li>
+                <li>Beyond crashes, performance tuning can optimize system performance</li>
+                <ul>
+                    <li>Sometimes using <strong><em>trace listings</em></strong> of activities, recorded for analysis</li>
+                    <li><strong>Profiling</strong> is periodic sampling of instruction pointers to look for statistical trends</li>
+                </ul>
+                <li>Improve performance by removing bottlenecks</li>
+                <li>OS must provide means of computing and displaying measures of system behavior</li>
+                <ul>
+                    <li>Windows Task Manager</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">System Boot</h2>
+            <ul>
+                <li>When power initialized on system, execution starts at a fixed memory location</li>
+                <ul>
+                    <li>Firmware ROM used to hold initial boot code</li>
+                </ul>
+                <li>Operating System must be made available to hardware so hardware can start it</li>
+                <ul>
+                    <li>Small piece of code, <strong>bootstrap loader</strong>, stored in <strong>ROM</strong> or <strong>EEPROM</strong> locates the kernel, loads it into memory, and starts it</li>
+                    <li>Sometimes two-step process where <strong>boot block</strong> at fixes location loaded by ROM code, which loads bootstrap loader from disk</li>
+                </ul>
+                <li>Common bootstrap loader, <strong>GRUB</strong>, allows selection of kernel from multiple disks, versions, kernel options</li>
+                <li>Kernel loads and system is then running</li>
+                <li>Booting:</li>
+                <ul>
+                    <li>Modern hardware often uses UEFI (unified extensible firmware interfaces) rather than BIOS, as it provided better support for 64-bit systems</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="section-header">01/24/22 CLASS NOTES - Chapter 3</h1>
+        <div class="section-container">
+            <h2 class="container-header">Process Concept</h2>
+            <ul>
+                <li>An operating system executes a variety of programs.</li>
+                <ul>
+                    <li>Batch system - <strong>jobs</strong></li>
+                    <li>Time-shared systems - <strong>user programs</strong></li>
+                </ul>
+                <li>Program is passive entity stored on disk (executable file), process is active</li>
+                <ul>
+                    <li>Program becomes process when executable file loaded into memory</li>
+                </ul>
+                <li>Execution of program started via GUI mouse clicks, command line entry of its name, etc</li>
+                <li>One program can consist of several processes</li>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
+            <p>- Process Components in Memory </p>
+            <p class="oneSpace">- The program code, also called <strong>text section</strong> </p>
+            <p class="oneSpace">- Current activity including <strong>program counter</strong>, processor registers </p>
+            <p class="oneSpace">- <strong>Stack</strong> containing temporary data </p>
+            <p class="twoSpace">- Function parameters, return addresses, local variables </p>
+            <p class="oneSpace"><strong>- Data section </strong>containing global variables </p>
+            <p class="oneSpace"><strong>- Heap </strong>containing memory dynamically allocated during run time </p>
+
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
+            <p>-<strong>Process State</strong> - As a process executes, it changes state </p>
+            <p class="oneSpace">- New: The process is being created </p>
+            <p class="oneSpace">- Running: Instructions are being executed </p>
+            <p class="oneSpace">- Waiting: The Process is waiting for some event to occur </p>
+            <p class="oneSpace">- Ready: The process is waiting to be assigned to a processor </p>
+            <p class="oneSpace">- Terminated: The process has finished execution </p>
+
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
+            <p>- Process Control Block (PCB) </p>
+            <p><strong>- Process Scheduler</strong> - selects among available processes for next execution on CPU</p>
+            <p class="oneSpace">- Maximize CPU user, quickly switch processes onto CPU for time sharing </p>
+            <p>- OS Maintains scheduling queues of processes </p>
+            <p class="oneSpace"><strong>- Job Queue </strong>- set of all processes in the system </p>
+            <p class="oneSpace"><strong>- Ready Queue </strong>- set of all processes residing in main memory, ready and waiting to execute </p>
+            <p class="oneSpace"><strong>- Device Queues </strong>- set of processes waiting for an I/O device </p>
+            <p class="oneSpace">- Processes migrate among the various queues </p>
+
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
+            <p>- Schedules </p>
+            <p class="oneSpace"><strong>- Long-term Scheduler </strong>(or job scheduler) - selects which processes should be brought into the ready queue </p>
+            <p class="oneSpace"><strong>- Short-term Scheduler </strong>(or CPU scheduler) - selects which process should be executed next and allocates CPU </p>
+            <p class="oneSpace">- Short-term scheduler is invoked very frequently (milliseconds) </p>
+            <p class="oneSpace"><strong>- Medium-term Scheduler </strong>- can be added if degree of multi-programming needs to be changed </p>
+
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
+            <p>- Multitasking in Mobile Systems </p>
+            <p class="oneSpace">- Some systems / early systems allow only one process to run, others suspended </p>
+            <p class="oneSpace">- Due to screen real estate IOS provides for: </p>
+            <p class="twoSpace">- Single foreground process, controlled via user interface </p>
+            <p class="twoSpace">- Multiple background processes, in memory, running, but not on the display </p>
+
+        </div>
+    </div>
+
 
 
 
