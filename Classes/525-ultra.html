@@ -19,8 +19,10 @@
         <div class="dropdown">
             <button class="dropbtn">School &#8671; </button>
             <div class="dropdown-content">
-                <a href="525-ultra.html">525 Notes</a>
-                <a href="557-Notes.html">557 Notes</a>
+                <a href="525-ultra.html">525 - Notes</a>
+                <a target="_blank" href="https://bookshelf.vitalsource.com/reader/books/9781119320913/epubcfi/6/2[%3Bvnd.vst.idref%3Dcover]!/4/2">Textbook</a>
+                <a target="_blank" href="https://emunix.emich.edu/~mevett/OS/syllabus.html">Syllabus</a>
+                <a href="557-Notes.html">557 - Notes</a>
             </div>
         </div>
         <div class="dropdown">
@@ -79,120 +81,132 @@
     </div>
 
     <div class="section" id="tables">
-        <h1 class="section-header">Tables</h1>
+        <h1 class="section-header">01/12/22 Class Notes</h1>
         <div class="section-container">
-            <h2 class="container-header">Create Table</h2>
+            <h2 class="container-header">What is an Operating System</h2>
             <ul>
-                <li>CREATE TABLE &#60tablename&#62</li>
+                <li>A program that acts as an intermediary between a user of a computer and the computer hardware</li>
+                <li>Computer System can be divided into four components:</li>
+                <ol>
+                    <li><strong>Hardware </strong> - CPU, Memory, etc</li>
+                    <li><strong>Operating System </strong> - Controls and coordinates use of hardware among various applications</li>
+                    <li><strong>Application Programs </strong> - define the ways in which the system resources are used to solve the computing problems</li>
+                    <li><strong>Users </strong> - People, machines, other computers</li>
+                </ol>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">What Operating Systems Do </h2>
+            <ul>
+                <li>Users want convenience, ease of use</li>
+                <li>Shared computers, like a mainframe, must keep all users happy</li>
+                <li>Some computers have little or no user interface, such as embedded computers in devices and automobiles</li>
+                <li><strong>Operating System Definition:</strong></li>
                 <ul>
-                    <p>&#60column_name&#62 &#60data_type&#62,</p>
-                    <p>&#60column_name&#62 &#60data_type&#62</p>
+                    <li>OS is a resource allocator</li>
+                    <li>Manages all resources</li>
+                    <li>Decides between conflicting requests for efficient and fair resource use</li>
+                    <li>OS is a control program</li>
+                    <li>Controls execution of programs to prevent errors and improper use of the computer</li>
+                    <li>No universally accepted definition</li>
                 </ul>
-                <p>);</p>
-                <li>Repeat as many times as needed</li>
-                <li>Create Table Example:</li>
-
-                <li>CREATE TABLE cats</li>
+                <li><strong>Bootstrap Program</strong> - loaded at power-up or reboot</li>
                 <ul>
-                    <p>name VARCHAR(100),</p>
-                    <p>age INT</p>
+                    <li>Typically stored in ROM or EPROM, generally known as firmware</li>
+                    <li>Initializes all aspects of system</li>
+                    <li>Loads operating system kernel and starts execution</li>
                 </ul>
-                <p>);</p>
-                <li><strong>SHOW TABLES;</strong> - shows the created tables</li>
-                <li><strong>SHOW COLUMNS FROM &#60tablename&#62</strong> - Shows the table columns</li>
-                <li><strong>DESC &#60tablename&#62</strong> - Shorthand to show the table columns</li>
-                <li><strong>DROP TABLE &#60tableName&#62</strong> - Deletes a table</li>
+                <li><strong>Computer-System Operation</strong></li>
+                <ul>
+                    <li>One or more CPUs, device controllers connect through common bus providing access to shared memory</li>
+                    <li>Concurrent execution of CPUs and devices competing for memory cycles</li>
+                    <img class="image" src="525/0112-Image1.jpg" alt="0112-Image1"/>
+                    <li>I/O devices and the CPU can execute concurrently</li>
+                    <li>Each device controller is in charge of a particular device type</li>
+                    <li>Each device controller has a local buffer</li>
+                    <li>CPU moves data from/to main memory to/from local buffers</li>
+                    <li>I/O is from the device to local buffer of controller</li>
+                    <li>Device controller informs CPU that it has finished its operation by causing an interrupt</li>
+                </ul>
             </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">Common Functions of Interrupts</h2>
+            <ul>
+                <li>Interrupt transfers control to the interrupt service routine generally, through the interrupt vector, which contains the addresses of all the service routines</li>
+                <li>Interrupt architecture must save the address of the interrupted instruction</li>
+                <li>A trap or exception is a software-generated interrupt caused either by an error or a user request</li>
+                <li>An operating system is interrupt driven</li>
+                <li>Interrupt Handling</li>
+                <ul>
+                    <li>The operating system preserves the state of the CPU by storing registers and the program counter</li>
+                    <li>Determines which type of interrupt has occurred:</li>
+                    <ul>
+                        <li>Polling</li>
+                        <li>Vectored interupt system</li>
+                    </ul>
+                    <li>Separate segments of code determine what action should be taken for each type of interrupt</li>
+                    <img class="image" src="525/0112-Image2.jpg" alt="0112-Image2"/>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">I/O Structure</h2>
+            <ul>
+                <li>After I/O starts, control returns to user program only upon I/O completion</li>
+                <ul>
+                    <li>Wait instruction idles the CPU until the next interrupt</li>
+                    <li>Wait loop (contention for memory access)</li>
+                    <li>At most one I/O request is outstanding at a time, no simultaneous I/O processing</li>
+                </ul>
+                <li>I/O Structure - Synch vs. Asynch</li>
+                <ul>
+                    <li>Synchronous: after I/O starts, control returns to user program only upon I/O completion</li>
+                    <ul>
+                        <li>Wait instructions idles the CPU until the next interupt</li>
+                        <li>Wait loop (contention for memory access)</li>
+                        <li>At most one I/O request is outstanding at a time, no simultatenous I/O processing</li>
+                    </ul>
+                    <li>Asynchronous: after I/O starts, control returns to user program without waiting for I/O completion</li>
+                    <ul>
+                        <li><strong>System Call </strong> - request to the OS to allow user to wait for I/O completion</li>
+                        <li><strong>Device status table </strong> - contains entry for each I/o device indicating its type, address, and state</li>
+                        <li>OS indexes into I/O device table to determine device status and to modify table entry to include interrupt</li>
+                    </ul>
+                </ul>
+                <li>Drivers</li>
+                <ul>
+                    <li><strong>Device Driver </strong> - for each device cotnroller to manage I/O</li>
+                    <li>Provides uniform interface between controller and kernal</li>
+                </ul>
+                <li>Direct Memory Access Structure</li>
+                <ul>
+                    <li>Used for high-speed I/O devices able to transmit information at close to memory speeds</li>
+                    <li>Device controller transfers blocks of data from buffer storage directly to main memory without CPU intervention</li>
+                    <li>Only one interrupt is generated per block, rather than the one interrupt per byte</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="section-container">
+            <h2 class="container-header">Template Section Header</h2>
+
         </div>
         <div class="section-container">
-            <h2 class="container-header">Inserting / Adding Data to Table</h2>
-            <ul>
-                <li>Insert two values:</li>
-                <strong>INSERT INTO &#60tablename&#62 (variablename1, variablename2) VALUES (value1, value2)</strong>
-                <li>Order of variables doesn't matter. Just have to match variable name to value</li>
-                <li>To insert multiple values, separate the groups with a comma.</li>
-                <li>Example:</li>
-                <p><strong>INSERT INTO cats(name,age) VALUES ('Peanut', 2), ('Butter', 4);</strong></p>
-                <li>Shows the values in the table:</li>
-                <p><strong>SELECT * FROM &#60tablename&#62;</strong></p>
+            <h2 class="container-header">Template Section Header</h2>
 
-                <li>Add a default value to variable:</li>
-                <p><strong>&#60varName&#62 &#60varType&#62 DEFAULT &#60varVALUE&#62 ;</strong></p>
-                <li>Example:</li>
-                <p><strong>name VARCHAR(20) DEFAULT 'no name provided'</strong> - String with a default value</p>
-                <li>Add a default value to variable and prevents NULL being entered:</li>
-                <p><strong>&#60varName&#62 &#60varType&#62 NOT NULL DEFAULT &#60varVALUE&#62 ;</strong></p>
-                <li>Example - String with a default value:</li>
-                <p><strong>name VARCHAR(20) NOT NULL DEFAULT 'unnamed'</strong></p>
-            </ul>
-            
-            
         </div>
+        
+
     </div>
 
-    <div class="section" id="keys">
-        <h1 class="section-header">Keys</h1>
-        <div class="section-container">
-            <h2 class="container-header">Creating Keys</h2>
-            <ul>
-                <li>Primary Key: A Unique key for each database item, determined by the specified variable.</li>
-                <li><strong>PRIMARY KEY (&#60varName&#62)</strong></li>
-                <li>Example: </li>
-                <p><strong>CREATE TABLE unique_cats (cat_id INT NOT NULL, age INT, PRIMARY KEY (catd_id));</strong></p>
-                <li>The next ID in the system can be automatically incremented</li>
-                <li><strong>AUTO_INCREMENT</strong> - Add to key</li>
-                <li>Example: </li>
-                <p><strong>CREATE TABLE unique_cats (cat_id INT NOT NULL AUTO_INCREMENT, age INT, PRIMARY KEY (catd_id));</strong></p>
-            </ul>
-        </div>
-    </div>
 
-    <div class="section" id="data">
-        <h1 class="section-header">SQL Data Types</h1>
-        <div class="section-container">
-            <h2 class="container-header">Numeric Types</h2>
-            <ul>
-                <li>INT</li>
-                <li>SMALLINT</li>
-                <li>TINYINT</li>
-                <li>MEDIUMINT</li>
-                <li>BIGINT</li>
-                <li>DECIMAL</li>
-                <li>NUMERIC</li>
-                <li>FLOAT</li>
-                <li>DOUBLE</li>
-                <li>BIT</li>
-            </ul>
-        </div>
-        <div class="section-container">
-            <h2 class="container-header">String Types</h2>
-            <ul>
-                <li>Char</li>
-                <li>VARCHAR - have to specify a specific length: varchar(100)</li>
-                <li>BINARY</li>
-                <li>VARBINARY</li>
-                <li>BLOB</li>
-                <li>TINYBLOB</li>
-                <li>MEDIUMBLOB</li>
-                <li>LONGBLOB</li>
-                <li>TEXT</li>
-                <li>TINYTEXT</li>
-                <li>MEDIUMTEXT</li>
-                <li>LONGTEXT</li>
-                <li>ENUM</li>
-            </ul>
-        </div>
-        <div class="section-container">
-            <h2 class="container-header">Date Types</h2>
-            <ul>
-                <li>DATE</li>
-                <li>DATETIME</li>
-                <li>TIMESTAMP</li>
-                <li>TIME</li>
-                <li>YEAR</li>
-            </ul>
-        </div>
-    </div>
+
+
+
 
     <div class="section">
         <h1 class="section-header">Template Header</h1>

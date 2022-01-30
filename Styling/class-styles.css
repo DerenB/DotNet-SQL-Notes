@@ -63,8 +63,19 @@ ul {
     padding-top: 5px;
 }
 
+ol {
+    padding-left: 25px;
+    padding-top: 5px;
+}
+
 li {
     padding-top: 5px;
+}
+
+.image {
+    border: 1px solid black;    
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .color-palette {
