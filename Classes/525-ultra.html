@@ -192,18 +192,255 @@
         </div>
 
         <div class="section-container">
-            <h2 class="container-header">Template Section Header</h2>
+            <h2 class="container-header">Storage Structure</h2>
+            <ul>
+                <li><strong>Main memory</strong> - only large storage media that the CPU can access directly</li>
+                <ul>
+                    <li>Random Access</li>
+                    <li>Typically Volatile</li>
+                </ul>
+                <li><strong>Secondary storage</strong> - extension of main memory that provides large nonvolatile storage capacity</li>
+                <li><strong>Magnetic disks</strong> - rigid metal or glass platters covered with magnetic recording material</li>
+                <ul>
+                    <li>Disk surface is logically divided into tracks, which are subdivided into sectors</li>
+                    <li>The disk controller determines the logical interaction between the device and the computer</li>
+                </ul>
+                <li>Solid-state disks - faster than magnetic disks, nonvolatile</li>
+                <ul>
+                    <li>Various technologies</li>
+                    <li>Becoming more popular</li>
+                </ul>
+                <li>Storage Hierachry</li>
+                <ul>
+                    <li>Storage systems organized in hierachry</li>
+                    <ul>
+                        <li>Speed</li>
+                        <li>Cost</li>
+                        <li>Volatility</li>
+                    </ul>
+                    <li><strong>Caching </strong> - copying information into faster storage system; main memory can be viewed as a cache for secondary storage</li>
+                    <li><strong>Device Driver </strong> - each device controller to manage I/O</li>
+                    <ul>
+                        <li>Provides uniform interface between controller and kernel</li>
+                    </ul>
+                </ul>
+                <img class="image" src="525/0112-Image3.jpg" alt="0112-Image3"/>
+                <li><strong>Caching</strong></li>
+                <ul>
+                    <li>Important principle, performed at many levels in a computer (in hardware, operating system, software)</li>
+                    <li>Information in use copied from slower to faster storage temporarily</li>
+                    <li>Faster storage (cache) checked first to determine if information is there</li>
+                    <ul>
+                        <li>If it is, information used directly from the cache (fast)</li>
+                        <li>If not, data copied to cache and used there</li>
+                    </ul>
+                    <li>Cache smaller than storage being cached</li>
+                    <ul>
+                        <li>Cache management important design problem</li>
+                        <li>Cache size and replacement policy</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
 
+        <div class="section-container">
+            <h2 class="container-header">Computer-System Architecture</h2>
+            <ul>
+                <li>Most systems use a single general-purpose processor (PDAs through mainframes)</li>
+                <ul>
+                    <li>Most systems have special-purpose processors as well</li>
+                </ul>
+                <li><strong>Multiprocessors </strong> systems growing in use and importance</li>
+                <ul>
+                    <li>Also known as parallel systems, tightly-coupled systems</li>
+                    <li>Advantages include:</li>
+                    <ol>
+                        <li>Increased throughput</li>
+                        <li>Economy of Scale</li>
+                        <li>3) Increased reliability - graceful degradation or fault tolerance</li>
+                    </ol>
+                    <li>Two types:</li>
+                    <ol>
+                        <li>Asymmetric Multiprocessing</li>
+                        <li>Symmetric Multiprocessing</li>
+                    </ol>
+                </ul>
+                <img class="image" src="525/0112-Image4.jpg" alt="0112-Image4"/>
+                <p></p>
+                <img class="image" src="525/0112-Image5.jpg" alt="0112-Image5"/>
+                <li>A Dual-Core Design</li>
+                <ul>
+                    <li>UMA (uniform memory access) and NUMA architecture variations</li>
+                    <li>Multi-chip and multicore</li>
+                    <li>Systems containing all chips vs. blade servers</li>
+                    <ul>
+                        <li>Chassis containing multiple separate systems</li>
+                    </ul>
+                </ul>
+                <li>Clustered Systems</li>
+                <ul>
+                    <li>Like multiprocessor systems, but multiple systems working together</li>
+                    <ul>
+                        <li>Usually sharing storage via a storage-area network (SAN)</li>
+                        <li>Provides a high-availability service which survives failures</li>
+                        <ul>
+                            <li><strong>Asymmetric clustering </strong>has one machine in hot-standby mode</li>
+                            <li><strong>Symmetric clustering </strong>has multiple nodes running applications, monitoring each other</li>
+                        </ul>
+                        <li>Some clusters are for high-performance computing (HPC)</li>
+                        <ul>
+                            <li>Applications must be written to use parallelization</li>
+                        </ul>
+                        <li>Some have distributed lock manager (DLM) to avoid conflicting operations</li>
+                    </ul>
+                </ul>
+            </ul>
         </div>
         <div class="section-container">
-            <h2 class="container-header">Template Section Header</h2>
-
+            <h2 class="container-header">Operating System Structure</h2>
+            <ul>
+                <li><strong>Multiprogramming</strong> needed for efficiency</li>
+                <ul>
+                    <li>Single user cannot keep CPU and I/O devices busy at all times</li>
+                    <li>Multiprogramming organizes jobs (code and data) so CPU always has one to execute</li>
+                    <li>A subset of total jobs in system is kept in memory</li>
+                    <li>One job selected and run via job scheduling</li>
+                    <li>When it has to wait (for I/O for example), OS switches to another job</li>
+                </ul>
+                <li><strong>Timesharing (multitasking) </strong>is logical extension in which CPU switches jobs so frequently that users can interact with each job while it is running, creating interactive computing</li>
+                <ul>
+                    <li>Response time should be &lt; 1 second</li>
+                    <li>Each user has at least one program executing in memory &#x27A1; process</li>
+                    <li>If several jobs ready to run at the same time &#x27A1; CPU scheduling</li>
+                    <li>If processes don't fit in memory, swapping moves them in and out to run</li>
+                    <li>Virtual memory allows execution of processes not completely in memory</li>
+                </ul>
+            </ul>
         </div>
-        
-
     </div>
 
+    <div class="section">
+        <h1 class="section-header">01/19/22 Class Notes</h1>
+        <div class="section-container">
+            <h2 class="container-header">Process Management</h2>
+            <ul>
+                <li>A process is a program in execution. It is a unit of work within the system. Program is a <em>passive entity</em>, process is an <em>active entity</em>.</li>
+                <li>Process needs resources to accomplish its task</li>
+                <ul>
+                    <li>CPU, memory, I/O, files</li>
+                    <li>Initialization data</li>
+                </ul>
 
+                <li>Process termination requires reclaim of any reusable resources</li>
+                <li>Single-threaded process has one <strong>program counter</strong> specifying location of next instruction to execute</li>
+                <ul>
+                    <li>Process executes instructions sequentially, one at a time, until completion</li>
+                </ul>
+                <li>Multi-threaded process has one program counter per thread</li>
+                <li>Typically system has many processes, some user, some operating system running concurrently on one or more CPUs</li>
+
+            </ul>
+        </div>
+
+
+        <div class="sectionNote" id="0119">
+            
+            
+            
+            
+            
+            <p class="oneSpace">- Concurrency by multiplexing the CPUs among the processes / threads</p>
+    
+            <p>- The operating system is responsible for the following activities in connection with process management: </p>
+            <p class="oneSpace">- Creating and deleting both user and system processes</p>
+            <p class="oneSpace">- Suspending and resuming processes</p>
+            <p class="oneSpace">- Providing mechanisms for process synchronization</p>
+            <p class="oneSpace">- Providing mechanisms for process communication</p>
+            <p class="oneSpace">- Providing mechanisms for deadlock handling </p>
+            <hr class="break">
+    
+            <p id="0119-Section1"><strong>- Memory Management </strong></p>
+            <p class="oneSpace">- All data in memory before and after processing </p>
+            <p class="oneSpace">- All instructions in memory in order to execute </p>
+            <p class="oneSpace">- Memory management determines what is in memory when </p>
+                <p class="twoSpace">- Optimizing CPU utilization and computer response to users </p>
+            <p class="oneSpace">- Memory management activities </p>
+                <p class="twoSpace">- Keeping track of which parts of memory are currently being used and by whom </p>
+                <p class="twoSpace">- Deciding which processes (or parts thereof) and data to move into and out of memory </p>
+                <p class="twoSpace">- Allocating and deallocating memory space as needed </p>
+    
+            <p><strong>- Storage Management</strong></p>
+            <p class="oneSpace">- OS provides uniform, logical view of information storage</p>
+                <p class="twoSpace">- Abstracts physical properties to logical storage unit  - file</p>
+                <p class="twoSpace">- Each medium is controlled by device (i.e., disk drive, tape drive)</p>
+                    <p class="threeSpace">- Varying properties include access speed, capacity, data-transfer rate, access method (sequential or random)</p>
+            <p class="oneSpace">- File-System management</p>
+                <p class="twoSpace">- Files usually organized into directories</p>
+                <p class="twoSpace">- Access control on most systems to determine who can access what</p>
+                <p class="twoSpace">- OS activities include</p>
+                    <p class="threeSpace">- Creating and deleting files and directories</p>
+                    <p class="threeSpace">- Primitives to manipulate files and dirs</p>
+                    <p class="threeSpace">- Mapping files onto secondary storage</p>
+                    <p class="threeSpace">- Backup files onto stable (non-volatile) storage media</p>
+    
+            <p><strong>- Mass-Storage Management</strong></p>
+            <p class="oneSpace">- Usually disks used to store data that does not fit in main memory or data that must be kept for a “long” period of time</p>
+            <p class="oneSpace">- Proper management is of central importance</p>
+            <p class="oneSpace">- Entire speed of computer operation hinges on disk subsystem and its algorithms</p>
+            <p class="oneSpace">- OS activities</p>
+                <p class="twoSpace">- Free-space management</p>
+                <p class="twoSpace">- Storage allocation</p>
+                <p class="twoSpace">- Disk scheduling</p>
+            <p class="oneSpace">- Some storage need not be fast</p>
+                <p class="twoSpace">- Tertiary storage includes optical storage, magnetic tape</p>
+                <p class="twoSpace">- Still must be managed</p>
+                <p class="twoSpace">- Varies between WORM (write-once, read-many-times) and RW (read-write)</p>
+            <img class="oneSpace image" src="525/0119-Image1.jpg" alt="0119-Image1"/>
+            <hr class="break">
+    
+            <p id="0119-Section2"><strong>I/O Subsystem</strong></p>
+            <p>- One purpose of OS is to hide peculiarities of hardware devices 
+                from the user </p>
+            <p>- I/O subsystem responsible for </p>
+            <p class="oneSpace">- Memory management of I/O including buffering (storing data temporarily while it is being transferred), caching (storing parts of data in faster storage for performance), spooling (the overlapping of output of one job with input of other jobs)</p>
+            <p class="oneSpace">- General device-driver interface</p>
+            <p class="oneSpace">- Drivers for specific hardware devices</p>
+    
+            <p><strong>- Web-Based Computing</strong></p>
+            <p class="oneSpace">- Web has become ubiquitous</p>
+            <p class="oneSpace">- PCs most prevalent devices</p>
+            <p class="oneSpace">- More devices becoming networked to allow web access</p>
+            <p class="oneSpace">- New category of devices to manage web traffic among similar servers: <strong>load balancers</strong></p>
+            <p class="oneSpace">- Use of operating systems like Windows 95, client-side, have evolved into Linux and Windows XP, which can be clients and servers</p>
+            <hr class="break">
+    
+            <p id="0119-Section3"><strong>- Chapter 2: Operating-System Structures</strong></p>
+            <p>- Operating System Services</p>
+            <p class="oneSpace">- Operating systems provide an environment for execution of programs and services to programs and users</p>
+            <p class="oneSpace">- One set of operating-system services provides functions that are helpful to the user:</p>
+                <p class="twoSpace"><strong>- User interface</strong> - Almost all operating systems have a user interface (UI).</p>
+                    <p class="threeSpace">- Varies between Command-Line (CLI), Graphics User Interface (GUI), Batch</p>
+                <p class="twoSpace"><strong>- Program execution</strong> - The system must be able to load a program into memory and to run that program, end execution, either normally or abnormally (indicating error)</p>
+                <p class="twoSpace"><strong>- I/O operations</strong> - A running program may require I/O, which may involve a file or an I/O device</p>
+                <p class="twoSpace"><strong>- File-system manipulation </strong> - The file system is of particular interest. Programs need to read and write files and directories, create and delete them, search them, list file Information, permission management.</p>
+                <p class="twoSpace"><strong>- Communications</strong> - Processes may exchange information, on the same computer or between computers over a network</p>
+                    <p class="threeSpace">- Communications may be via shared memory or through message passing (packets moved by the OS)</p>
+                <p class="twoSpace"><strong>- Error detection</strong> - OS needs to be constantly aware of possible errors</p>
+                    <p class="threeSpace">- May occur in the CPU and memory hardware, in I/O devices, in user program</p>
+                    <p class="threeSpace">- For each type of error, OS should take the appropriate action to ensure correct and consistent computing</p>
+                    <p class="threeSpace">- Debugging facilities can greatly enhance the user's and programmer's abilities to efficiently use the system</p>
+            <p class="oneSpace">- Another set of OS functions exists for ensuring the efficient operation of the system itself via resource sharing</p>
+                <p class="twoSpace"><strong>- Resource allocation</strong> - When  multiple users or multiple jobs running concurrently, resources must be allocated to each of them</p>
+                    <p class="threeSpace">- Many types of resources -  Some (such as CPU cycles, main memory, and file storage) may have special allocation code, others (such as I/O devices) may have general request and release code</p>
+                <p class="twoSpace"><strong>- Accounting</strong> - To keep track of which users use how much and what kinds of computer resources</p>
+                <p class="twoSpace"><strong>- Protection and security</strong> - The owners of information stored in a multiuser or networked computer system may want to control use of that information, concurrent processes should not interfere with each other</p>
+                    <p class="threeSpace"><strong>- Protection</strong> - involves ensuring that all access to system resources is controlled</p>
+                    <p class="threeSpace"><strong>- Security</strong> - of the system from outsiders requires user authentication, extends to defending external I/O devices from invalid access attempts</p>
+                    <p class="threeSpace">- If a system is to be protected and secure, precautions must be instituted throughout it. A chain is only as strong as its weakest link.</p>
+        </div>
+
+        
+    </div>
 
 
 
