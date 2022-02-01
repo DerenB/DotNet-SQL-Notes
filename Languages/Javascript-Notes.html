@@ -84,72 +84,31 @@
     </div>
 
     <div class="section">
-        <h1 class="section-header">Today Notes</h1>
+        <h1 class="section-header">Functions</h1>
         <div class="section-container">
-            <h2 class="container-header">Flexbox Creation</h2>
+            <h2 class="container-header">Anonymous Function</h2>
             <ul>
-                <li>Mainly used for the spacing between items and their position within the container</li>
-                <li>display: flex;</li>
+                textBox.addEventListener('keydown', function(event) {
                 <ul>
-                    <li>Sets a class up as a flex container</li>
+                    console.log(`You pressed "${event.key}".`);
                 </ul>
-                <li>flex-wrap: wrap;</li>
-                <ul>
-                    <li>Wraps the container as the window changes size</li>
-                    <ul>
-                        <li>fsdfsdfsd</li>
-                    </ul>
-                </ul>
-                <li>flex-direction: column;</li>
-                <ul>
-                    <li>Makes the flex container into a column</li>
-                </ul>
+            });
             </ul>
         </div>
         <div class="section-container">
-            <h2 class="container-header">Flexbox Creation</h2>
+            <h2 class="container-header">Arrow Function</h2>
             <ul>
-                <li>Mainly used for the spacing between items and their position within the container</li>
-                <li>display: flex;</li>
-                <ul>
-                    <li>Sets a class up as a flex container</li>
-                </ul>
-                <li>flex-wrap: wrap;</li>
-                <ul>
-                    <li>Wraps the container as the window changes size</li>
+                textBox.addEventListener('keydown', (event) => {
                     <ul>
-                        <li>fsdfsdfsd</li>
+                        console.log(`You pressed "${event.key}".`);
                     </ul>
-                </ul>
-                <li>flex-direction: column;</li>
-                <ul>
-                    <li>Makes the flex container into a column</li>
-                </ul>
+                });
             </ul>
         </div>
-    </div>
-
-    <div class="section">
-        <h1 class="section-header">Today Notes</h1>
         <div class="section-container">
-            <h2 class="container-header">Flexbox Creation</h2>
+            <h2 class="container-header">Arrow Function - One Line</h2>
             <ul>
-                <li>Mainly used for the spacing between items and their position within the container</li>
-                <li>display: flex;</li>
-                <ul>
-                    <li>Sets a class up as a flex container</li>
-                </ul>
-                <li>flex-wrap: wrap;</li>
-                <ul>
-                    <li>Wraps the container as the window changes size</li>
-                    <ul>
-                        <li>fsdfsdfsd</li>
-                    </ul>
-                </ul>
-                <li>flex-direction: column;</li>
-                <ul>
-                    <li>Makes the flex container into a column</li>
-                </ul>
+                textBox.addEventListener('keydown', (event) => console.log(`You pressed "${event.key}".`));
             </ul>
         </div>
     </div>
