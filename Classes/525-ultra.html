@@ -641,29 +641,33 @@
         </div>
 
         <div class="section-container">
-            <h2 class="container-header">Template Section Header</h2>
-            <p>- Process Components in Memory </p>
-            <p class="oneSpace">- The program code, also called <strong>text section</strong> </p>
-            <p class="oneSpace">- Current activity including <strong>program counter</strong>, processor registers </p>
-            <p class="oneSpace">- <strong>Stack</strong> containing temporary data </p>
-            <p class="twoSpace">- Function parameters, return addresses, local variables </p>
-            <p class="oneSpace"><strong>- Data section </strong>containing global variables </p>
-            <p class="oneSpace"><strong>- Heap </strong>containing memory dynamically allocated during run time </p>
+            <h2 class="container-header">Process Components in Memory</h2>
+            <ul>
+                <li>The program code, also called <strong>text section</strong></li>
+                <li>Current activity including <strong>program counter</strong>, processor registers</li>
+                <li><strong>Stack</strong> containing temporary data</li>
+                <ul>
+                    <li>Function parameters, return addresses, local variables</li>
+                </ul>
+                <li>Data section </strong>containing global variables</li>
+                <li>Heap </strong>containing memory dynamically allocated during run time </li>
+            </ul>
 
         </div>
         <div class="section-container">
-            <h2 class="container-header">Template Section Header</h2>
-            <p>-<strong>Process State</strong> - As a process executes, it changes state </p>
-            <p class="oneSpace">- New: The process is being created </p>
-            <p class="oneSpace">- Running: Instructions are being executed </p>
-            <p class="oneSpace">- Waiting: The Process is waiting for some event to occur </p>
-            <p class="oneSpace">- Ready: The process is waiting to be assigned to a processor </p>
-            <p class="oneSpace">- Terminated: The process has finished execution </p>
-
+            <h2 class="container-header">Process State</h2>
+            <ul>
+                <li><strong>Process State</strong> - As a process executes, it changes state</li>
+                <li>New: The process is being created</li>
+                <li>Running: Instructions are being executed</li>
+                <li>Waiting: The Process is waiting for some event to occur</li>
+                <li>Ready: The process is waiting to be assigned to a processor</li>
+                <li>Terminated: The process has finished execution</li>
+            </ul>
         </div>
         <div class="section-container">
-            <h2 class="container-header">Template Section Header</h2>
-            <p>- Process Control Block (PCB) </p>
+            <h2 class="container-header">Process Control Block (PCB)</h2>
+            <p>- </p>
             <p><strong>- Process Scheduler</strong> - selects among available processes for next execution on CPU</p>
             <p class="oneSpace">- Maximize CPU user, quickly switch processes onto CPU for time sharing </p>
             <p>- OS Maintains scheduling queues of processes </p>
@@ -693,7 +697,114 @@
         </div>
     </div>
 
-
+    <div class="section">
+        <h1 class="section-header">02/07/22 Class Notes - Chapter 4</h1>
+        <div class="section-container">
+            <h2 class="container-header">Multicore Programming</h2>
+            <ul>
+                <li>Most modern applications are multithreaded</li>
+                <li>Multiple tasks of the application can be implemented by separate tasks</li>
+                <li>Process creation is <em>heavy-weight</em> while thread creation is <em>light-weight</em></li>
+                <li>Can simplify code, increase efficiency</li>
+                <li>Benefits:</li>
+                <ul>
+                    <li><strong>Responsiveness</strong> - may allow continued execution if part of process is blocked</li>
+                    <li><strong>Resource Sharing</strong> - threads share resources of process</li>
+                    <li><strong>Economy</strong> - cheaper than process creation, thread switching has lower overhead than context switching</li>
+                    <li><strong>Scalability</strong> - process can take advantage of multicore architecture</li>
+                </ul>
+                <li>Multicore or multiprocessor systems add challenges for programmers</li>
+                <ul>
+                    <li>Dividing (decomposing) activities</li>
+                    <li>Load Balancing</li>
+                    <li>Data Splitting</li>
+                    <li>Data dependency</li>
+                    <li>Testing and debugging</li>
+                </ul>
+                <li><strong>Parallelism</strong> - a system can perform more than one task truly simultaneously</li>
+                <li><strong>Concurrency</strong> - supports more than one task making progress</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Parallelism</h2>
+            <ul>
+                <li>Types of Parallelism</li>
+                <ul>
+                    <li><strong>Data Parallelism</strong> - distributes subsets of the same data across multiple cores, same operation on each</li>
+                    <li><strong>Task Parallelism</strong> - distributing threads across cores, each thread performing unique operation</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Amdahl's Law</h2>
+            <ul>
+                <li>Identifies performance gains ("speedup") from adding additional cores to an application that has both serial and parallel components</li>
+                <li><em>S</em> is serial portion</li>
+                <li><em>N</em> processing cores</li>
+                <li>speedup <= 1 / [S + ((1-S)/N)]</li>
+                <li>Example:</li>
+                <ul>
+                    <p>if application is 75% parallel, 25% serial, moving from 1 to 2 cores results in speedup of 1.6 times</p>
+                </ul>
+                <li>As <em>N</em> approaches infinity, speedup approaches 1 / <em>S</em></li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">User Threads - Kernel Threads</h2>
+            <ul>
+                <li><strong>User Threads</strong> - management done by user-level threads library</li>
+                <li>Three primary thead libraries</li>
+                <ul>
+                    <li>POSIX Pthreads</li>
+                    <li>Win32 Threads</li>
+                    <li>Java threads</li>
+                </ul>
+                <li><strong>Many-to-one model</strong></li>
+                <ul>
+                    <li>many user-level threads mapped to single kernel thread. Managed by user-space thread library</li>
+                    <li>one user thread blocking causes all to block</li>
+                    <li>Multiple threads may not run in parallel on multicore system because only one may be in kernel at a time</li>
+                </ul>
+                <li><strong>One-to-one model</strong></li>
+                <ul>
+                    <li>Each user-level thread maps to kernel thread</li>
+                    <li>Most common model today</li>
+                </ul>
+                <li><strong>Many-to-many Model</strong></li>
+                <ul>
+                    <li>Allows many user level threads to be mapped to many kernel threads</li>
+                    <li>Allows the operating system to create a sufficient number of kernel threads</li>
+                </ul>
+                <li>Thread Libraries</li>
+                <ul>
+                    <li>Provides programmer with API for creating and managing threads</li>
+                    <li>Two primary ways of implementing</li>
+                    <ul>
+                        <li>Library entirely in user space</li>
+                        <li>Kernel level library supported by the OS</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Java Threads</h2>
+            <ul>
+                <li>Java threads are managed by the JVM - Java Virtual Machine</li>
+                <li>Typically implemented using the threads model provided by underlying OS</li>
+                <li>Java threads may be created by:</li>
+                <ul>
+                    <li>Extending Thread class</li>
+                    <li>Implemting the Runnable interface and providing an instance of that Runnable as arguements to Thread constructor</li>
+                    <ul>
+                        <p>public interface runnable</p>
+                        <ul>
+                            <p></p>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+    </div>
 
 
     <div class="section">
