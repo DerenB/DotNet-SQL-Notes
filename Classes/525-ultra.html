@@ -667,9 +667,14 @@
         </div>
         <div class="section-container">
             <h2 class="container-header">Process Control Block (PCB)</h2>
+            <ul>
+                <li><strong>Process Scheduler</strong> - selects among available processes for next execution on CPU</li>
+                <li>Maximize CPU user, quickly switch processes onto CPU for time sharing</li>
+            </ul>
+
             <p>- </p>
-            <p><strong>- Process Scheduler</strong> - selects among available processes for next execution on CPU</p>
-            <p class="oneSpace">- Maximize CPU user, quickly switch processes onto CPU for time sharing </p>
+            <p></p>
+            <p class="oneSpace">- </p>
             <p>- OS Maintains scheduling queues of processes </p>
             <p class="oneSpace"><strong>- Job Queue </strong>- set of all processes in the system </p>
             <p class="oneSpace"><strong>- Ready Queue </strong>- set of all processes residing in main memory, ready and waiting to execute </p>
@@ -798,9 +803,111 @@
                     <ul>
                         <p>public interface runnable</p>
                         <ul>
-                            <p></p>
+                            <p>abstract</p>
                         </ul>
                     </ul>
+                </ul>
+                <li>Example located at Source Code for Java Threads</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Implicit Threads</h2>
+            <ul>
+                <li>Growing in popularity as numbers of threads increase, program correctness more difficult with explicit threads</li>
+                <li>Creation and management of threads done by compilers and run-time libraries rather than programmers</li>
+                <li>Three methods to explore</li>
+                <ul>
+                    <li>Thread Pools</li>
+                    <li>OpenMP</li>
+                    <li>Grand Central Dispatch</li>
+                </ul>
+                <li>Thread Pools:</li>
+                <ul>
+                    <li>Create a number of threads in a pool where they await work</li>
+                    <li>Advantages:</li>
+                    <ul>
+                        <li>Usually slightly faster to service a request with an existing thread than create a new thread</li>
+                    </ul>
+                </ul>
+                <li>OpenMP:</li>
+                <ul>
+                    <li>set of compilers directives and an API for C, C++, Fortran</li>
+                    <li>Provides support for parallel programming in shared-memory environments</li>
+                    <li>Identifies <strong>parallel regions</strong> - blocks of code that can run in parallel</li>
+                </ul>
+                <li>Grand Central Dispatch</li>
+                <ul>
+                    <li>Apple technology for Mac OS X and IOS operating systems</li>
+                    <li>Extensions to C, C++, API, run-time library</li>
+                    <li>allows identification of parallel sections</li>
+                    <li>Manages most of the details of threading</li>
+                    <li>Blocks placed in dispatch queue</li>
+                    <li>Two types of dispatch queues:</li>
+                    <ul>
+                        <li>Serial - blocks removed in FIFO order, queue is per process</li>
+                        <li>Concurrent - removed in FIFO order but several may be removed at a time</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Signal Handling</h2>
+            <ul>
+                <li>Signals are used in UNIX systems to notify a process that a particular event has occurred</li>
+                <li>A signal handler is used to process signals</li>
+                <li>Every signal has a default handler</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Cancellation</h2>
+            <ul>
+                <li>Terminating a thread before it has finished</li>
+                <li>Thread to be canceled is <strong>target thread</strong></li>
+                <li>Two general approaches</li>
+                <ul>
+                    <li>Asynchronous Cancellation terminates the target thread immediately</li>
+                    <li>Synchronous Cancellation</li>
+                </ul>
+                <li>Invoking thread cancellation in Pthreads requests cancellation, but actual cancellation depends on thread state</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Thread-local storage</h2>
+            <ul>
+                <li>Recall that all threads share the data of their process</li>
+                <li><strong>Thread-local storage (TLS)</strong> allows each thread to have its own copy of data</li>
+                <li>Example: transaction processing with each thread processing one transaction</li>
+                <li>Useful when you do not have control over the thread creation process</li>
+                <li>Different from local variables</li>
+                <ul>
+                    <li>Local variables visible only during single function invocation</li>
+                    <li>TLS visible across function invocations</li>
+                </ul>
+                <li>Similar to static data</li>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Programming Assignment</h2>
+            <ul>
+                <li>Programming Assignments - Stacks Threads</li>
+                <li>Use any standard deviation calculation method</li>
+                <li>Need:</li>
+                <ul>
+                    <li>driver class</li>
+                    <li>thread class</li>
+                    <li>can do a thead for each calculation type</li>
+                    <li>can extend the thead class or implement the runnable class</li>
+                </ul>
+                <li>drivers Thread bob = new Thread (method(...))</li>
+                <li>don't call run, call start()</li>
+                <ul>
+                    <p>class Method implements Runnable {</p>
+                        <ul>
+                            <p>public void run() {</p>
+                            <p>...</p>
+                            <p>}</p>
+                        </ul>
+                    <p>}</p>
                 </ul>
             </ul>
         </div>
@@ -811,6 +918,7 @@
         <h1 class="section-header">Template Header</h1>
         <div class="section-container">
             <h2 class="container-header">Template Section Header</h2>
+
 
         </div>
     </div>
