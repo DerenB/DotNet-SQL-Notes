@@ -64,17 +64,44 @@
         <h1 class="section-header">Table of Contents</h1>
         <div class="section-container">
             <ul>
-                <li><a href="#tables">Tables</a></li>
+                <li>01/12/22 Class Notes</li>
                 <ul>
-                    <li>Create tables</li>
-                    <li>Inserting / Adding Data to Table</li>
+                    <li>What is an Operating System</li>
+                    <li>What Operating Systems do</li>
+                    <li>Common Functions of Interrupts</li>
+                    <li>I/O Structure</li>
+                    <li>Storage Structure</li>
+                    <li>Computer-System Architecture</li>
+                    <li>Operating System Structure</li>
                 </ul>
-                <li><a href="#keys">Keys</a></li>
-                <li><a href="#data">SQL Data Types</a></li>
+                <li>01/19/22 Class Notes</li>
                 <ul>
-                    <li>Numeric Types</li>
-                    <li>String Types</li>
-                    <li>Date Types</li>
+                    <li>Process Management</li>
+                    <li>Memory Management</li>
+                    <li>Storage Management</li>
+                    <li>Mass-Storage Management</li>
+                    <li>I/O Subsystem</li>
+                    <li>Web-Based Computing</li>
+                    <li>Chapter 2: Operating-System Structures</li>
+                </ul>
+                <li>01/24/22 Class Notes</li>
+                <ul>
+                    <li>Background Services</li>
+                    <li>OS Design and Implementation</li>
+                    <li>OS Structure</li>
+                    <li>Microkernel System Structure</li>
+                    <li>Modules</li>
+                    <li>Operating-System Debugging</li>
+                    <li>System Boot</li>
+                </ul>
+                <li>01/24/22 Class Notes - Chapter 3</li>
+                <ul>
+                    <li>Process Concept</li>
+                    <li>Process Components in Memory</li>
+                    <li>Process State</li>
+                    <li>Process Control Block (PCB)</li>
+                    <li>Schedules</li>
+                    <li>Multitasking in Mobile Systems</li>
                 </ul>
             </ul>
         </div>
@@ -670,35 +697,34 @@
             <ul>
                 <li><strong>Process Scheduler</strong> - selects among available processes for next execution on CPU</li>
                 <li>Maximize CPU user, quickly switch processes onto CPU for time sharing</li>
+                <li>OS Maintains scheduling queues of processes </li>
+                <ul>
+                    <li><strong>Job Queue </strong>- set of all processes in the system</li>
+                    <li><strong>Ready Queue </strong>- set of all processes residing in main memory, ready and waiting to execute</li>
+                    <li><strong>Device Queues </strong>- set of processes waiting for an I/O device </li>
+                    <li>Processes migrate among the various queues </li>
+                </ul>
             </ul>
-
-            <p>- </p>
-            <p></p>
-            <p class="oneSpace">- </p>
-            <p>- OS Maintains scheduling queues of processes </p>
-            <p class="oneSpace"><strong>- Job Queue </strong>- set of all processes in the system </p>
-            <p class="oneSpace"><strong>- Ready Queue </strong>- set of all processes residing in main memory, ready and waiting to execute </p>
-            <p class="oneSpace"><strong>- Device Queues </strong>- set of processes waiting for an I/O device </p>
-            <p class="oneSpace">- Processes migrate among the various queues </p>
-
         </div>
         <div class="section-container">
-            <h2 class="container-header">Template Section Header</h2>
-            <p>- Schedules </p>
-            <p class="oneSpace"><strong>- Long-term Scheduler </strong>(or job scheduler) - selects which processes should be brought into the ready queue </p>
-            <p class="oneSpace"><strong>- Short-term Scheduler </strong>(or CPU scheduler) - selects which process should be executed next and allocates CPU </p>
-            <p class="oneSpace">- Short-term scheduler is invoked very frequently (milliseconds) </p>
-            <p class="oneSpace"><strong>- Medium-term Scheduler </strong>- can be added if degree of multi-programming needs to be changed </p>
-
+            <h2 class="container-header">Schedules</h2>
+            <ul>
+                <li><strong>Long-term Scheduler</strong> (or job scheduler) - selects which processes should be brought into the ready queue </li>
+                <li><strong>Short-term Scheduler </strong>(or CPU scheduler) - selects which process should be executed next and allocates CPU </li>
+                <li>Short-term scheduler is invoked very frequently (milliseconds)</li>
+                <li><strong>Medium-term Scheduler </strong>- can be added if degree of multi-programming needs to be changed </li>
+            </ul>
         </div>
         <div class="section-container">
-            <h2 class="container-header">Template Section Header</h2>
-            <p>- Multitasking in Mobile Systems </p>
-            <p class="oneSpace">- Some systems / early systems allow only one process to run, others suspended </p>
-            <p class="oneSpace">- Due to screen real estate IOS provides for: </p>
-            <p class="twoSpace">- Single foreground process, controlled via user interface </p>
-            <p class="twoSpace">- Multiple background processes, in memory, running, but not on the display </p>
-
+            <h2 class="container-header">Multitasking in Mobile Systems </h2>
+            <ul>
+                <li>Some systems / early systems allow only one process to run, others suspended</li>
+                <li>Due to screen real estate IOS provides for:</li>
+                <ul>
+                    <li>Single foreground process, controlled via user interface </li>
+                    <li>Multiple background processes, in memory, running, but not on the display</li>
+                </ul>
+            </ul>
         </div>
     </div>
 
@@ -1094,11 +1120,96 @@
             </ul>
         </div> 
         <div class="section-container">
-            <h2 class="container-header"></h2>
+            <h2 class="container-header">Mutex Locks</h2>
             <ul>
-                
+                <li>Previous solutions are complicated and generally inaccessible to application programmers (since programmer needs access to the machine language instructions).</li>
+                <li>OS designers build software tools to solve critical section problem</li>
+                <li>Simplest is mutex lock</li>
+                <li>Protect critical regions by first <strong>acquire()</strong> a lock then <strong>release()</strong> it</li>
+                <ul>
+                    <li>Boolean variable indicating if lock is available or not</li>
+                </ul>
             </ul>
         </div> 
+        <div class="section-container">
+            <h2 class="container-header">Semaphore</h2>
+            <ul>
+                <li>Synchronization tool that does not require busy waiting (though we'll look at a busy-waiting implementation first)</li>
+                <li>Semaphore S - integer variable</li>
+                <li>Two standard operations modify S: <strong>wait()</strong> and <strong>signal()</strong></li>
+                <ul>
+                    <li>Originally called P() and V()</li>
+                </ul>
+                <li>More flexible usage due to S having a numeric value</li>
+                <li><strong>Counting Semaphore</strong> - integer value can range over an unrestricted domain</li>
+                <li><strong>Binary Semaphore</strong> - integer value can range only between 0 and 1</li>
+                <ul>
+                    <li>Acts as a mutex lock</li>
+                </ul>
+                <li>Can implement a counting semaphore S with binary semaphores</li>
+                <li>Can solve various synchronization problems</li>
+            </ul>
+        </div> 
+        <div class="section-container">
+            <h2 class="container-header">Semaphore Implementation</h2>
+            <ul>
+                <li>Must guarantee that no two processes can execute <strong>wait()</strong> and <strong>signal()</strong> on the same semaphore at the same time</li>
+                <li>Thus, implementaion could be via the critical section problem where the wait and signal code are placed in the critical section</li>
+                <li>Associate a waiting queue (of processes) with each semaphore</li>
+                <li>Define a semaphore as a structure</li>
+            </ul>
+        </div> 
+        <div class="section-container">
+            <h2 class="container-header">Deadlock and Starvation</h2>
+            <ul>
+                <li><strong>Deadlock</strong> - two or more processes are waiting indefinitely for an event that can be caused only by one of the waiting processes</li>
+                <li><strong>Starvation</strong> - indefinite blocking</li>
+                <ul>
+                    <li>a process may never be removed from the semaphore queue in which it is suspended</li>
+                    <li>If >2 proces and the wake() operation is not FIFO</li>
+                </ul>
+                <li><strong>Priority Inversion</strong> - scheduling problem when lower-priority process holds a lock needed by higher-priority process</li>
+                <ul>
+                    <li>Solved via <strong>priority-inheritance protocol</strong></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="section-container">
+            <h2 class="container-header">Classical Problems of Synchronization</h2>
+            <ul>
+                <li><strong>Bounded-Buffer via Semaphores</strong></li>
+                <ul>
+                    <li>A buffer that can hold <em>n</em> items</li>
+                    <li>Semaphore <strong>mutex</strong> initialization to the value 1</li>
+                    <li>Semaphore <strong>full</strong> initializes to the value 0</li>
+                    <li>Semaphore <strong>empty</strong> initializes to 0</li>
+                </ul>
+                <li><strong>Readers-Writers Problem</strong></li>
+                <ul>
+                    <li>A data set is shared among a number of concurrent processes</li>
+                    <ul>
+                        <li>Readers - only read the data set; they do <em><strong>not</strong></em> perform any updates</li>
+                        <li>Writers - can both read and write</li>
+                    </ul>
+                    <li>Problem - allow multiple readers to read at the same time</li>
+                    <ul>
+                        <li>Only one single writer can access the shared data at the same time</li>
+                    </ul>
+                    <li>Several variations of how readers and writers are treated - all involve priorities</li>
+                    <li>Shared Data</li>
+                    <ul>
+                        <li>Data Set</li>
+                        <li>Semaphore <strong>rw_mutex</strong> initialized to 1</li>
+                        <li>Semaphore <strong>mutex</strong> initialized to 1</li>
+                        <li>Integer <strong>read_count</strong> initialized to 0</li>
+                    </ul>
+                    <li>First variation: no reader kept waiting unless writer has permission to use shared object</li>
+                    <li>Second Variation: once writer is ready, it performs write ASAP</li>
+                    <li>Both may suffer starvation leading to even more variations</li>
+                    <li>Problem is solved on some systems by kernel providing reader-writer locks</li>
+                </ul>
+            </ul>
+        </div>
     </div>
 
 
