@@ -887,7 +887,7 @@
             </ul>
         </div>
         <div class="section-container">
-            <h2 class="container-header">Template Section Header</h2>
+            <h2 class="container-header">Communication</h2>
             <ul>
                 <li>Scheme of communication between user and kernel threads</li>
                 <li>Kernel provides set of LWP to application which schedules user threads onto them defines/provides an upcall handler</li>
@@ -912,13 +912,193 @@
                     <p>class Method implements Runnable {</p>
                         <ul>
                             <p>public void run() {</p>
-                            <p>...</p>
+                            <ul>
+                                <p>...</p>
+                            </ul>
                             <p>}</p>
                         </ul>
                     <p>}</p>
                 </ul>
             </ul>
         </div>
+    </div>
+    <div class="section">
+        <h1 class="section-header">02/09/22 Class notes - Chapter 6</h1>
+        <div class="section-container">
+            <h2 class="container-header">Processes</h2>
+            <ul>
+                <li>Processes can execute concurrently</li>
+                <ul>
+                    <li>May be interrupted at any time, partially completing execution</li>
+                </ul>
+                <li>Concurrent access to shared data may result in data inconsistency</li>
+                <li>Maintaining data consistency requires mechanisms to ensure the orderly execution of cooperating processes</li>
+            </ul>
+        </div> 
+        <div class="section-container">
+            <h2 class="container-header">Critical Section Problem</h2>
+            <ul>
+                <li>Consider system of <em>n</em> processes</li>
+                <li>Each process has a segment of code that is a <strong>critical section</strong></li>
+                <ul>
+                    <li>Process may be changing shared variables, updating table, writing file, etc</li>]
+                    <li>When one process in critical section, no other may be in its critical section</li>
+                </ul>
+                <li><strong>Critical section problem</strong> is to design a protocol to solve this</li>
+                <li>Each process must ask permission to enter critical section in <strong>entry section</strong>, may follow critical section with <strong>exit section</strong>, then <strong>remainder section</strong>.</li>
+            </ul>
+            <ul>
+                <li>General structure of process Pi is:</li>
+                <ul>
+                    <p>do {</p>
+                    <ul>
+                        <p><em>empty section</em></p>
+                        <ul>
+                            <p>critical section</p>
+                        </ul>
+                        <p><em>exit section</em></p>
+                        <ul>
+                            <p>remainder section</p>
+                        </ul>
+                    </ul>
+                    <p>} while (true);</p>
+                </ul>
+            </ul>
+        </div> 
+        <div class="section-container">
+            <h2 class="container-header">Desiderata for Solution to CS Problem</h2>
+            <ol>
+               <li><strong>Mutual Exclusion</strong> - if process P is executing in its critical section, then no other processes can be executing in their critical section</li> 
+               <li><strong>Progress</strong> - If no process is executing in its critical section and there exist some processes that wish to enter their critical section, then the section of the processes that will enter the critical section next cannot be postponed indefinitely</li>
+               <li><strong>Bounded Waiting</strong> - a bound must exist on the number of times that other processes are allowed to enter their critical sections after a process has made a request to enter its critical section adn before that request is granted</li>
+            </ol>
+            <ul>
+                <li>Two approaches depending on if kernel is preemptive or non-preemptive</li>
+                <ul>
+                    <li><strong>Preemptive</strong> - allows preemption of process when running in kernel mode</li>
+                    <li><strong>Non-preemptive</strong> - runs until exits kernel mode, blocks, or voluntarily yields CPU</li>
+                    <ul>
+                        <li>Essentially free of race conditions in kernel mode</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div> 
+        <div class="section-container">
+            <h2 class="container-header">Peterson's Solution</h2>
+            <ul>
+                <li>Good algorithmic description of solving the problem</li>
+                <li>Two process solution (call them P<sub>0</sub> and P<sub>1</sub>)</li>
+                <li>Assume that the <strong>load</strong> and <strong>store</strong> instructions are <em>atomic</em>; that is, cannot be interrupted</li>
+                <li>The two processes share two variables:</li>
+                <ul>
+                    <li>int turn;</li>
+                    <li>Boolean flag[2]</li>
+                </ul>
+                <li>The variables turn indicates whose turn it is to enter the critical section</li>
+                <li>The <strong>flag</strong> array is used to indicate if a process is ready to enter the critical section. <strong>flag[i] = true</strong> implies that process Pi is ready!</li>
+            </ul>
+            <ul>
+                <li>Algorithm for Process P<sub>i</sub></li>
+                <ul>
+                    <p>do {</p>
+                        <ul>
+                            <p>flag[i] = true;</p>
+                            <p>turn = j;</p>
+                            <p>while (flag[j] && turn == j);</p>
+                            <ul>
+                                <p>critical section</p>
+                            </ul>
+                            <p>flag[i] = false;</p>
+                            <ul>
+                                <p>remainder section</p>
+                            </ul>
+                        </ul>
+                    <p>} while (true);</p>
+                </ul>
+            </ul>
+        </div> 
+        <div class="section-container">
+            <h2 class="container-header">Synchronization Hardware</h2>
+            <ul>
+                <li>Many systems provide hardware support for critical section code</li>
+                <li>All following solutions based on idea of locking</li>
+                <li>Uniprocessors - could disable interrupts while in CS</li>
+                <ul>
+                    <li>Currently running code would execute without preemption</li>
+                    <li>Generally too inefficient on multiprocessor systems</li>
+                    <ul>
+                        <li>Operating systems using this not broadly scalable</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div> 
+        <div class="section-container">
+            <h2 class="container-header">test_and_set Instruction</h2>
+            <ul>
+                <li>test_and_set Instruction</li>
+                <ul>
+                    <p>boolean test_and_set (boolean *target) {</p>
+                    <ul>
+                        <p>boolean rv = *target;</p>
+                        <p>*target = TRUE;</p>
+                        <p>return rv;</p>
+                    </ul>
+                    <p>}</p>
+                </ul>
+                <li>Solution to CS using test_and_set():</li>
+                <ul>
+                    <p>do {</p>
+                    <ul>
+                        <p>while (test_and_set (&lock)); /* do nothing */</p>
+                        <ul>
+                            <p>/* critical section */</p>
+                            <p> lock = false;</p>
+                            <p>/* remainder section */</p>
+                        </ul>
+                    </ul>
+                    <p>} while (true);</p>
+                </ul>
+            </ul>
+        </div> 
+        <div class="section-container">
+            <h2 class="container-header">compare_and_swap Instruction</h2>
+            <ul>
+                <li>Definition:</li>
+                <ul>
+                    <p>int compare_and_swap (int *value, int expected, int new_value) {</p>
+                    <ul>
+                        <p>int temp = *value;</p>
+                        <p>if (*value == expected)</p>
+                        <ul>
+                            <p>*value = new_value;</p>
+                        </ul>
+                        <p>return temp;</p>
+                    </ul>
+                    <p>}</p>
+                </ul>
+                <li>Shared Boolean variable lock initialized to 0</li>
+                <li>Solution: (lock == 1 if someone's in CS</li>
+                <ul>
+                    <p>do {</p>
+                    <ul>
+                        <p>while (compare_and_swap (&lock, 0, 1) != 0 //Can change lock</p>
+                        <ul>
+                            <p>; /* do nothing */</p>
+                        </ul>
+                        <p>/* critical section */</p>
+                        <p>lock = 0;</p>
+                        <p>/* remainder section */</p>
+                    </ul>
+                    <p>} while (true);</p>
+                </ul>
+            </ul>
+        </div> 
+        <div class="section-container">
+            <h2 class="container-header"></h2>
+            <ul>
+                
+            </ul>
+        </div> 
     </div>
 
 
